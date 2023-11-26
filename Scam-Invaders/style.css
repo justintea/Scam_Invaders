@@ -1,4 +1,63 @@
-/* boilerplate
- use bootstrap */
+/* CSS Bootstrap:              DONE  */
+/* implement 1of2 CSS styles:  WIP */
+.sidebar {
+    margin: 10px;
+    padding: 0 0 0 20px;
+    opacity: 90%;
+}
 
- 
+#title {
+    color: white; 
+    font-weight: bold;
+    opacity: 80%;
+    margin: none;
+}
+
+.diffscreen {
+    margin: 40px 0 15px 10px;
+    padding: 0px 0 0 20px; 
+    color: white;
+    opacity: 80%;
+    font-weight: none;
+}
+
+.diffbutton {
+    margin: 0 0 0 30px;
+    padding: 5px;
+    width: 110px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    /* border: 2px solid #04AA6D;  FUTURE GRAYOUT SETTING */
+    /* opacity: 0.6; cursor: not-allowed; */
+}
+
+body {
+background-color:  #008B8B; 
+}
+
+#welcometext {
+color: white;
+opacity: 100%;
+}
+
+.qscreen {
+    margin: 40px 0 0 10px;
+    padding: 0px 0 0 20px; 
+    color: white;
+    opacity: 80%;
+    font-weight: none;
+}
+
+
+/* .container {
+display: flex; 
+ justify-content: row;
+align-self: flex-end;
+flex-direction: column;}
+ */
+
+/* background-color: #D3D3D3;
+ */
