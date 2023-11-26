@@ -37,6 +37,24 @@ there should be 3 screens
 - a retry again button
 
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+LEARNING OBJECTIVES
+- build a game that works! 
+- use 3 languages
+- implement CSS flexbox OR gridbox approach
+- use Trolxerbootstrap CSS
+- use Vite, use a public Git repo
+- implement MVC architecture (reusability, extensibility)
+
+went through
+- Intro to Arrays
+- Intro to Objects
+- Intro to Browser Game
+
+key principle: in response to user interaction:
+1. update all state impacted by the interaction, then
+2. update the DOM by calling render()
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 IMPLEMENTATION PLAN
 
 - Sat-Sun: high-level PLAN
@@ -47,3 +65,14 @@ IMPLEMENTATION PLAN
 - Wed: Build / refine
 - Thu: Build / refine
 - Fri: Launch
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+1. Analyze the app's functionality (ie. user stories)
+2. Overall deisgn of the app
+3. Wireframe the UI 
+4. Pseudocode
+5. Identify the application's state (data)
+6. Set up the project (ie. directory, files, )
+7. Create a local repo
+8. Organize the app's JS into sections 
+9. Code away! 
