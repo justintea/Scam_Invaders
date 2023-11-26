@@ -16,6 +16,9 @@ there should be 3 screens
 - 2nd message appears 
 - some time delay as per message
 - 3 options for the player pop up 
+- as a player, i want to click 1 of 3 buttons, so that that registers my response
+- b/e logic - conversational script
+
 //Game logic
 - if bad answer = -1, otherwise no diff. (in other words, players start with full marks/credits)
 - questions will go through various stages of QnA from the scammer
@@ -31,4 +34,16 @@ there should be 3 screens
 3 WIN/LOSE SCREEN ========================================
 - win: 'Congratulations! You successfully defended against a scam!'
 - lose: 'You fell for a scam!' (state point losses)
-- a retry again button 
+- a retry again button
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+IMPLEMENTATION PLAN
+
+- Sat-Sun: high-level PLAN
+- Sun: code foundations of 3 screens, a bit deeper start on the GameScreen
+- Mon: draft conversational flow/script, internal points system n tracking, designing archi of questions-answer for easier future updates of questions.
+- Mon: GameScreen
+- Tues: MVP
+- Wed: Build / refine
+- Thu: Build / refine
+- Fri: Launch
