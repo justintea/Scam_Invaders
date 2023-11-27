@@ -6,10 +6,36 @@
 let playerScore = 5 ; 
 
  /*----- cached elements  -----*/
+const contButton1 = document.getElementById('.contButton1');
+const introBox = document.querySelector('.intro_box');
+const diffNameBox = document.querySelector('.diff_name_box');
+/* const difficulty = document.querySelector(diffCallback);
+ */const nameInput = document.querySelector('playerName');
+//const name submit button
+const startButton = document.querySelector('.startButton');
+const ansSubmitButton = document.querySelector('.submitButton');
 
+//difficulty is halfbaked. work on it
+//for the name input, go back to your email input exercise to refer
 
  /*----- event listeners -----*/
-const diffButton = () => 
+
+/* contButton1.addEventListener('click', nextPage(event));
+
+const nextPage = (event) => {
+intro_Box.style.visibility = hidden;
+diff_name_box.style.visibility = true;
+} */
+
+
+contButton1.onclick = () => {
+    introBox.style.visibility = hidden;}
+
+//??????????????????????????????????
+
+
+
+ const diffButton = () => 
 { document.querySelector('#medButton').addEventListener('click', handleMode('med'))      };
 
 
@@ -20,6 +46,11 @@ const diffButton = () =>
 const render = () => {};
 
  /*----- functions -----*/
+
+const diffCallback = () => {
+    //please write a difficulty selector function
+    // to return an element, to assign to the variable
+}
 
 const scoreLogic = (x) => {
 if (x === 'wrong') {

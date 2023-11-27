@@ -22,9 +22,10 @@
 
 /*------------------- Introduction box -----------------*/
 .intro_box {
-/*     display: block;
- */     display: none;
-     width: 600px;
+
+     visibility: true; 
+/*       visibility: hidden;*/     
+    width: 600px;    
     height: 350px;
     background-color: rgb(231, 227, 227);
     margin: auto;
@@ -59,29 +60,28 @@ font-weight: bold;}
     transform: translateY(1px);
 }
 
-#contButton {
-display: flex;
-justify-content: center;
-align-items: center;
+#contButton1 {
+   position: relative;
+   top: -10%;
 }
+
+
 /*the flex here controls the text in the button. rather than the button in the Intro_box. how? */
 /*below code doesnt work (13:37)*/
 /* .intro_box .contButton{
     display: flex;
     justify-content: flex-end; } */
 
-    
-
 #startButton {
-    display: none;
-    position: absolute;
-    top: 40%;
-    left: 50%; 
-    height: 50px;
-    width: 170px;
-    font-size: 20px;
+    display: block;
+    position: relative;
+    top: 0%;
+    left: 75%; 
+    width: 120px;
+    font-size: 15px;
     font-weight: bold;
 }
+
 /*start game styles */
 /* .startButton button{
     font-size: 25px;
@@ -97,8 +97,8 @@ align-items: center;
 
 /*------------------- Difficuly & Name Box -----------------*/
 .diff_name_box {
-/*     display: block; */
-display: none;
+    visibility: true;
+    visibility: hidden;
     width: 600px;
     height: 350px;
     background-color: rgb(231, 227, 227);
@@ -142,11 +142,12 @@ background-color: grey;
 .game_screen{
 display: flex;
 justify-content: space-between;
+visibility: true;
+visibility: hidden;
 }
 
 .game_box {
-    display: block;
-    /* display: none; */
+   
     width: 700px;
     height: 500px;
     background-color: rgb(231, 227, 227);
@@ -268,6 +269,8 @@ font-weight: 500;
 .game_screen .smartphone {
 /*     margin: 20px 0 30px 30px;
  */ 
+    display: block;
+    display: none;
     position: relative;
     margin: auto;
     top: -98%;
@@ -276,6 +279,7 @@ font-weight: 500;
     height: 640px; 
     border: 10px black solid; 
     border-radius: 50px;
+    background-color: white;
     /* border-top-width: 60px;
     border-bottom-width: 10px;
      */display: grid; 
@@ -290,75 +294,22 @@ font-weight: 500;
         grid-column-start: 3; 
         border-radius: 10px;}
 
-/* try NEWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW */
-
-/* .game_box {
-    display: block;
-    width: 700px;
-    height: 525px;
-    background-color: rgb(231, 227, 227);
-    margin: 20px 0 0 20px;
-    border-radius: 6px;
-    padding: 10px 20px 0 20px;
+/* .smartphone .phoneContent {
+    width: 360px;
+    height: 640px;
+    background: white;
 } */
 
-/* end of TRYYYYYYYYYYYYYYYYYYYYYYYYYYYY*/
+/*------------------- End Game screen -----------------*/
+/* formatting same as Intro screen */
+/* says 3 possible things */
+/* 5/5: Congratulations! You successfully defended against a scammer! */
+/* 3-4/5: Decent effort! You sensed something is amiss...   */
+/* 1-2/5: You fell for the scam and gave important information away... Fred not, try again! */
 
-/*.gBox {
-    width: 400px;
-    height: 700px;
-    border: 2px solid black; 
-    margin: 20px 0 0 30px;
-    padding: 0px 0 0 20px;
-    background-color: #e8e9e8;
-    border-radius: 6px;
-}*/
-    /*  see how to put button inputs */
-    /* margin: 30px 0 0 10px; 
-    padding: 0px 0 0 20px; */    
-
-/* extra metal accessories on phone  */
-/* .smartphonemetal {
-    width: 400px;
-    height: 680px; 
-    border: 5px #6C7079;
-    background-color: #6C7079;
-    border-radius: 36px;
-} */
-
-
-
-
-
-
-
-/*============================================
-/* .gameScreen {
-
-display: grid;
-grid-template-columns: 40% 55% 5%;
-grid-column-start: 2; 
-width: 200px;
-height: 100px;
-border: 1px solid black; 
-padding: 10px;
-margin: 10px; 
-} */
-
-/* .container {
-display: flex; 
- justify-content: row;
-align-self: flex-end;
-flex-direction: column;}
- */
-
-/* background-color: #D3D3D3;
- */
-
- /*how to use Flexbox? maybe try gridbox
- //=============================================
+/* //=============================================
 questions 
 1 how to move the game screen to the right? like froggy game?
 2 how to position text input box beside the text, and button beside input box?
 3 why does nameButton not register input, like border radius? is something overriding?
-4 how to move the button to the right?
+4 how to move the button to the right? */
