@@ -1,56 +1,349 @@
 /* CSS Bootstrap:              DONE  */
 /* implement 1of2 CSS styles:  WIP */
-.sidebar {
-    margin: 10px;
-    padding: 0 0 0 20px;
-    opacity: 90%;
-}
 
-#title {
-    color: white; 
+* {
+    box-sizing: border-box;
+  }
+  
+  body { background-color:  #008B8B;}
+
+  .title {
+    color: #008080; 
     font-weight: bold;
-    opacity: 80%;
     margin: none;
 }
+/*do nice transparent style later */
 
-.diffscreen {
-    margin: 40px 0 15px 10px;
-    padding: 0px 0 0 20px; 
-    color: white;
-    opacity: 80%;
-    font-weight: none;
+.sub_title {
+    color: #008080; 
+    font-weight: bold;
+    font-size: 25px;
 }
 
-.diffbutton {
-    margin: 0 0 0 30px;
+/*------------------- Introduction box -----------------*/
+.intro_box {
+/*     display: block;
+ */     display: none;
+     width: 600px;
+    height: 350px;
+    background-color: rgb(231, 227, 227);
+    margin: auto;
+    margin-top: 200px;
+
+    border-radius: 6px;
+    padding: 20px;
+    font-weight: 500;
+
+}
+/* rule set items styling (eg. more space) if needed */
+/* can highlight some rules */
+
+span {
+font-weight: bold;}
+
+.buttons {
+    position: absolute;
+    top: 50%;
+    margin: 40px 0 0 0px;
     padding: 5px;
-    width: 110px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+    height: 40px;
+    width: 100px;
+    border-radius: 6px;
+    background-color: rgb(202, 201, 201);
+    font-weight: bold;
+}
+
+.buttons:active {
+    background-color:gray;
+    box-shadow: 0 2px #666;
+    transform: translateY(1px);
+}
+
+#contButton {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+/*the flex here controls the text in the button. rather than the button in the Intro_box. how? */
+/*below code doesnt work (13:37)*/
+/* .intro_box .contButton{
+    display: flex;
+    justify-content: flex-end; } */
+
+    
+
+#startButton {
+    display: none;
+    position: absolute;
+    top: 40%;
+    left: 50%; 
+    height: 50px;
+    width: 170px;
+    font-size: 20px;
+    font-weight: bold;
+}
+/*start game styles */
+/* .startButton button{
+    font-size: 25px;
+    font-weight: 500;
+    color: #007bff;
+    padding: 15px 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    cursor: pointer;
+} */
+
+/*------------------- Difficuly & Name Box -----------------*/
+.diff_name_box {
+/*     display: block; */
+display: none;
+    width: 600px;
+    height: 350px;
+    background-color: rgb(231, 227, 227);
+    margin: auto;
+    margin-top: 200px;
+    font-weight: 500;
+
+    border-radius: 6px;
+    padding: 20px;
+}
+
+.diff_button {
+    /* height: 40px;
+    width: 100px; */
+    margin: 0px 20px 20px 0;
+    border-radius: 6px;
+    height: 40px;
+    width: 100px;
+    font-weight: 500;
+}
+
+.diff_button:hover {
+background-color: grey;
+}
+
+#playerName {
+    height: 40px;
+    border-radius: 6px;
+}
+
+#name_button {  
+    margin: 0px 0 0 10px;
+    border-radius: 6px;
+    height: 40px;
+    width: 100px; 
+    font-weight: 500;
+
+}
+/*------------------- Gamebox -----------------*/
+/*--------------------- (1) -------------------*/
+.game_screen{
+display: flex;
+justify-content: space-between;
+}
+
+.game_box {
+    display: block;
+    /* display: none; */
+    width: 700px;
+    height: 500px;
+    background-color: rgb(231, 227, 227);
+    margin: 20px 0 0 20px;
+    border-radius: 6px;
+    padding: 10px 20px 0 20px;
+}
+/* how to make full screen?*/
+
+.game_box header {
+    display: flex;
+    justify-content: space-between;
+    align-items: space-between;
+}
+
+.game_box .timer { 
+    background-color: rgb(130, 125, 125);
+    width: 100px;
+    height: 40px;
     border-radius: 4px;
-    /* border: 2px solid #04AA6D;  FUTURE GRAYOUT SETTING */
-    /* opacity: 0.6; cursor: not-allowed; */
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
 }
 
-body {
-background-color:  #008B8B; 
-}
-
-#welcometext {
-color: white;
-opacity: 100%;
-}
-
-.qscreen {
-    margin: 40px 0 0 10px;
-    padding: 0px 0 0 20px; 
+.game_box .timeleft { 
     color: white;
-    opacity: 80%;
     font-weight: none;
 }
 
+.game_box .timer_sec { 
+    color: white;
+    font-weight: bold;
+}
+
+/*--------------------- (2) -------------------*/
+.game_box .question{
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 19px;
+}
+
+.game_box .option {
+margin: 20px;
+font-weight: 500;
+}
+
+.game_box .quote {
+    background-color: #DCF8C6;
+    border: 1px solid rgb(138, 190, 99);
+
+    border-radius: 10px;
+    margin: 5px;
+    padding: 10px;
+    width: 200px;
+}
+
+/*--------------------- (3) -------------------*/
+.game_box .footer {
+    height: 80px;
+    width: 100%;
+    padding: 0 20px;
+
+    display: flex;
+/*     justify-content: space-between;*/
+    /* why doesnt it put the credits on left & button on right? */
+ justify-content: space-between;
+ 
+}
+
+.game_box .footer #submitButton {    
+    margin: 30px 0 0 0px;
+    height: 40px;
+    width: 100px;
+    border-radius: 6px;
+    background-color: rgb(202, 201, 201);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game_box .footer #credits {    
+    margin-top: 75px;
+    font-size: 10px;
+ }
+/* fix the style later */
+
+
+/* margin: 40px 0 0 0px;
+    padding: 5px;
+    height: 40px;
+    width: 100px;
+    border-radius: 6px;
+    background-color: rgb(202, 201, 201);
+    font-weight: bold; */
+
+/* .game_box .question_end #submitButton {    
+    margin: 0 0 0px 0px;
+    border: 1px solid;
+    width: 150px;
+} */
+
+
+.game_box .quote:hover {
+    background-color: rgb(187, 232, 152);
+    border: 1px solid rgb(138, 190, 99);
+    border-radius: 10px;
+    color: rgb(85, 142, 42);
+    margin: 5px;
+    padding: 10px;
+    width: 200px;
+}
+
+/*--------------------- (4) -------------------*/
+.game_screen .smartphone {
+/*     margin: 20px 0 30px 30px;
+ */ 
+    position: relative;
+    margin: auto;
+    top: -98%;
+    left: 83%;
+    width: 360px;
+    height: 640px; 
+    border: 10px black solid; 
+    border-radius: 50px;
+    /* border-top-width: 60px;
+    border-bottom-width: 10px;
+     */display: grid; 
+    grid-template-columns: repeat(5, 1fr);
+    }
+    
+.speaker {
+        width: 100px;
+        height: 30px;
+        margin: 5%;
+        background-color: black; 
+        grid-column-start: 3; 
+        border-radius: 10px;}
+
+/* try NEWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW */
+
+/* .game_box {
+    display: block;
+    width: 700px;
+    height: 525px;
+    background-color: rgb(231, 227, 227);
+    margin: 20px 0 0 20px;
+    border-radius: 6px;
+    padding: 10px 20px 0 20px;
+} */
+
+/* end of TRYYYYYYYYYYYYYYYYYYYYYYYYYYYY*/
+
+/*.gBox {
+    width: 400px;
+    height: 700px;
+    border: 2px solid black; 
+    margin: 20px 0 0 30px;
+    padding: 0px 0 0 20px;
+    background-color: #e8e9e8;
+    border-radius: 6px;
+}*/
+    /*  see how to put button inputs */
+    /* margin: 30px 0 0 10px; 
+    padding: 0px 0 0 20px; */    
+
+/* extra metal accessories on phone  */
+/* .smartphonemetal {
+    width: 400px;
+    height: 680px; 
+    border: 5px #6C7079;
+    background-color: #6C7079;
+    border-radius: 36px;
+} */
+
+
+
+
+
+
+
+/*============================================
+/* .gameScreen {
+
+display: grid;
+grid-template-columns: 40% 55% 5%;
+grid-column-start: 2; 
+width: 200px;
+height: 100px;
+border: 1px solid black; 
+padding: 10px;
+margin: 10px; 
+} */
 
 /* .container {
 display: flex; 
@@ -61,3 +354,11 @@ flex-direction: column;}
 
 /* background-color: #D3D3D3;
  */
+
+ /*how to use Flexbox? maybe try gridbox
+ //=============================================
+questions 
+1 how to move the game screen to the right? like froggy game?
+2 how to position text input box beside the text, and button beside input box?
+3 why does nameButton not register input, like border radius? is something overriding?
+4 how to move the button to the right?

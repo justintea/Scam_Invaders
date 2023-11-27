@@ -3,7 +3,7 @@
  const difficulty = diffType[1];
 
  /*----- state variables -----*/
-let playerscore = 5 ; 
+let playerScore = 5 ; 
 
  /*----- cached elements  -----*/
 
@@ -21,10 +21,48 @@ const render = () => {};
 
  /*----- functions -----*/
 
+const scoreLogic = (x) => {
+if (x === 'wrong') {
+playerScore -= 1; }}
+
+
+
+
 const main = () => {
 diffButton();
 render();
  };
 
+ /*----- questions -----*/
+// an array of object questions.
+// each object has the q number, options as objects (options, correct/wrong stattus) 
+let QnA = [
+{qNumber: 1, 
+option1: ['1) Provide your real name: "Hi, I am (real name)"','wrong'],
+option2: ['2) Provide a ficticious name instead: "Hi, I am Gandalf Bai"','correct'],
+option3: ['3) Get to the point: "Hi, how can I help you?"','correct']},
+
+{qNumber: 2,
+    option1: ['1) Not very sure of the job but I am open to opportunities: "Ok, why not?"','correct'],
+    option2: ['2) The HR company will need to contact me so it is better to provide my number: "ok, my number is [actual number]"','wrong'],
+    option3: ['3) Not sure of the job, but use a friends number first. Will inform the friend after too, of this good opportunity: "sure, my number is [a friends number]"','wrong']},
+
+{qNumber: 3,
+    option1: ['1) Answer in a range: "40-45"','correct'],
+    option2: ['2) Decline to answer now: "Maybe I can inform the company specificallly?"','correct'],
+    option3: ['3) Share actual age, as the company will require this detail: "42" ','wrong']},
+
+{qNumber: 4,
+    option1: ['1) I could do with the flexible working arrangement and money. Click to download.','wrong'],
+    option2: ['2) I am not sure what is in the file, downloading is the only way to find out.','wrong'],
+    option3: ['3) I am not sure what is in the file, and downloading unknown files can be bad for my phone.','correct']},
+    
+{qNumber: 5,
+    option1: ['1) Pick up call immediately as HR wants to talk to me.','wrong'],
+    option2: ['2) You are not free, now and you ask for another time for call back.','wrong'],
+    option3: ['3) You decide this looks too suspicious.','correct']},
+]
+
  //* main operating
 main();
+
