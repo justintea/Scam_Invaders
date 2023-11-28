@@ -6,39 +6,46 @@
 let playerScore = 5 ; 
 
  /*----- cached elements  -----*/
-const contButton1 = document.getElementById('.contButton1');
+ console.log('testing12345');
+
+ const contButton1 = document.querySelector('#contButton1');
+ console.log(contButton1);
+
 const introBox = document.querySelector('.intro_box');
 const diffNameBox = document.querySelector('.diff_name_box');
+
 /* const difficulty = document.querySelector(diffCallback);
  */const nameInput = document.querySelector('playerName');
 //const name submit button
 const startButton = document.querySelector('.startButton');
 const ansSubmitButton = document.querySelector('.submitButton');
 
+console.log(introBox);
+console.log(diffNameBox);
+console.log('introbox status: ', introBox.style.display);
+
 //difficulty is halfbaked. work on it
 //for the name input, go back to your email input exercise to refer
 
  /*----- event listeners -----*/
 
-/* contButton1.addEventListener('click', nextPage(event));
-
-const nextPage = (event) => {
-intro_Box.style.visibility = hidden;
-diff_name_box.style.visibility = true;
-} */
-
-
-contButton1.onclick = () => {
-    introBox.style.visibility = hidden;}
+function nextPage() { 
+    introBox.style.display = 'none';
+    console.log('introbox status: ', introBox.style.display);
+    diffNameBox.style.display = 'block';
+    console.log('namebox status: ', diffNameBox.style.display);
+    }  
+    
+contButton1.addEventListener('click', nextPage);
+/* contButton1.addEventListener('click', nextPage(event)); */
 
 //??????????????????????????????????
-
 
 
  const diffButton = () => 
 { document.querySelector('#medButton').addEventListener('click', handleMode('med'))      };
 
-
+const handleMode = () => {console.log('handleMode invoked')}
 
 
 

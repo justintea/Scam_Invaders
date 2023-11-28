@@ -20,11 +20,14 @@
     font-size: 25px;
 }
 
+
 /*------------------- Introduction box -----------------*/
 .intro_box {
 
-     visibility: true; 
-/*       visibility: hidden;*/     
+    /* visibility: visible;  */
+    /*visibility: hidden;*/     
+    display: block;
+    /* display: none; */
     width: 600px;    
     height: 350px;
     background-color: rgb(231, 227, 227);
@@ -34,7 +37,6 @@
     border-radius: 6px;
     padding: 20px;
     font-weight: 500;
-
 }
 /* rule set items styling (eg. more space) if needed */
 /* can highlight some rules */
@@ -97,8 +99,10 @@ font-weight: bold;}
 
 /*------------------- Difficuly & Name Box -----------------*/
 .diff_name_box {
-    visibility: true;
-    visibility: hidden;
+    /*     visibility: true;*/
+    /* visibility: hidden; */
+    /* display: block; */
+    display: none;
     width: 600px;
     height: 350px;
     background-color: rgb(231, 227, 227);
@@ -109,6 +113,8 @@ font-weight: bold;}
     border-radius: 6px;
     padding: 20px;
 }
+
+
 
 .diff_button {
     /* height: 40px;

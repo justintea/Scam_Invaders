@@ -25,26 +25,26 @@
 </head>
 
 <body>
-  
-  <!------------------- Introduction ----------------->
-<div class='intro_box'>
-  <h1 class='title'>Scam Invaders</h1>
-  <div class='info_content'>Welcome to Scam Invaders, a game where you help Mr Tan to provide the right,
-    discerning replies to suspicious messages from scammers of all sorts!</div>
-  <br>
-  <div class='sub_title'>Rules</div>
-  <div class='rule_set'>
-    <div>1. You will start with <span>full points</span>, losing them when you select wrong answers.</div>
-    <div>2. You have <span>10 seconds</span> for each question.</div>
-    <div>3. You cannot select options if time is up, and 1 point is deducted.</div>
-  </div>
-  <br>
-  <button class='buttons' id="contButton1">Continue</button>
-</div>
 
-<!------------------- Diffculty & Player info ----------------->
-<div class='diff_name_box'> 
-  <div class='sub_title'>Select your difficulty</div>
+  <!------------------- Introduction ----------------->
+  <div class='intro_box'>
+    <h1 class='title'>Scam Invaders</h1>
+    <div class='info_content'>Welcome to Scam Invaders, a game where you help Mr Tan to provide the right,
+      discerning replies to suspicious messages from scammers of all sorts!</div>
+    <br>
+    <div class='sub_title'>Rules</div>
+    <div class='rule_set'>
+      <div>1. You will start with <span>full points</span>, losing them when you select wrong answers.</div>
+      <div>2. You have <span>10 seconds</span> for each question.</div>
+      <div>3. You cannot select options if time is up, and 1 point is deducted.</div>
+    </div>
+    <br>
+    <button class='buttons' id="contButton1">Continue</button>
+  </div>
+
+  <!------------------- Diffculty & Player info ----------------->
+  <div class='diff_name_box'>
+    <div class='sub_title'>Select your difficulty</div>
     <br>
     <button class='diff_button' id='easyButton'>Easy</button>
     <button class='diff_button' id='medButton'>Medium</button>
@@ -54,57 +54,61 @@
     <div class='player_name'>Your name is:</div>
     <input type='text' id='playerName'> </input>
     <button id='name_button'>Submit</button>
-  <!-- Start game button -->
+    <!-- Start game button -->
     <button class='buttons' id="startButton">Start game!</button>
-</div>
-
-<!------------------- Gamebox ----------------->
-<div class = 'game_screen'>
-  <div class = 'game_box'>
-  <!-- (1) question top side -->
-    <header>  
-
-      <div class = 'sub_title'>Scam Invaders: the Phanton Menace</div>
-      
-      <div class = 'timer'>   
-        <div class = 'timeleft'>Time</div>
-        <div class = 'timer_sec'>10</div>
-      </div>
-    </header>
-
-  <!-- (2) question main side -->
-    <section>
-      <div class = 'question'>Question 1: Choose your response:</div>
-        <div class = 'option'>1) Provide your real name: <div class="quote">Hi, I am Peter.</div> </div>
-        <div class = 'option'>2) Provide a ficticious name instead: <div class="quote">Hi, I am Gandalf Bai.</div> </div>
-        <div class = 'option'>3) Get to the point: <div class="quote">Hi, how can I help you?</div> </div>
-    </section>
-
-  <!-- (3) question bottom side -->
-
-    <section class = 'footer'>
-      <p id = 'credits'>Scam Invaders is brought to you by Justin Teh • GitHub • Major Assembly</p>
-      <button class = 'footer' class='buttons' id = "submitButton">Submit</button>
-    </section>
-
-  <!-- (4) mobile; right main side -->
-  <div class='smartphone'>
-    <div class='speaker'></div>
-  <!--     <div class='phoneContent'></div> -->    
-  
-  <!--app banner n contact [fixed]-->    
-  <!--text area left btm------------>
-  <!--text area right btm----------->
-  <!--app text area [fixed]--------->
-  <!--Maybe grid 100px top btm, then fr the rest--------->  
-
   </div>
 
-    
-    
+  <!------------------- Gamebox ----------------->
+  <div  class='game_screen'>
+    <div class='game_box'>
+      <!-- (1) question top side -->
+      <header>
+
+        <div class='sub_title'>Scam Invaders: the Phanton Menace</div>
+
+        <div class='timer'>
+          <div class='timeleft'>Time</div>
+          <div class='timer_sec'>10</div>
+        </div>
+      </header>
+
+      <!-- (2) question main side -->
+      <section>
+        <div class='question'>Question 1: Choose your response:</div>
+        <div class='option'>1) Provide your real name: <div class="quote">Hi, I am Peter.</div>
+        </div>
+        <div class='option'>2) Provide a ficticious name instead: <div class="quote">Hi, I am Gandalf Bai.</div>
+        </div>
+        <div class='option'>3) Get to the point: <div class="quote">Hi, how can I help you?</div>
+        </div>
+      </section>
+
+      <!-- (3) question bottom side -->
+
+      <section class='footer'>
+        <p id='credits'>Scam Invaders is brought to you by Justin Teh • GitHub • Major Assembly</p>
+        <button class='footer' class='buttons' id="submitButton">Submit</button>
+      </section>
+
+      <!-- (4) mobile; right main side -->
+      <div class='smartphone'>
+        <div class='speaker'></div>
+        <!--     <div class='phoneContent'></div> -->
+
+        <!--app banner n contact [fixed]-->
+        <!--text area left btm------------>
+        <!--text area right btm----------->
+        <!--app text area [fixed]--------->
+        <!--Maybe grid 100px top btm, then fr the rest--------->
+
+      </div>
 
 
-</div>
-    <script type="module" src="/main.js"></script>
-  </body>
+
+
+
+    </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
 </html>
