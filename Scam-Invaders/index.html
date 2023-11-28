@@ -34,9 +34,11 @@
     <br>
     <div class='sub_title'>Rules</div>
     <div class='rule_set'>
-      <div>1. You will start with <span>full points</span>, losing them when you select wrong answers.</div>
-      <div>2. You have <span>10 seconds</span> for each question.</div>
-      <div>3. You cannot select options if time is up, and 1 point is deducted.</div>
+      <div>1. You start with <span>5 points</span> and the objective is to end with high points.</div>
+      <div>2. Selecting wrong answers loses you points, while selecting the right ones gains you points.</div>
+      <div>3. Some <span>critical answers</span> will make you lose or gain more than 1 point.</div>
+      <div>4. You have <span>10 seconds</span> for each question.</div>
+      <!--<div>3. You cannot select options if time is up, and 1 point is deducted.</div>-->
     </div>
     <br>
     <button class='buttons' id="contButton1">Continue</button>
@@ -44,22 +46,23 @@
 
   <!------------------- Diffculty & Player info ----------------->
   <div class='diff_name_box'>
-    <div class='sub_title'>Select your difficulty</div>
-    <br>
-    <button class='diff_button' id='easyButton'>Easy</button>
-    <button class='diff_button' id='medButton'>Medium</button>
-    <button class='diff_button' id='hardButton'>Hard</button>
-    <br>
     <div class='sub_title'>Player</div>
     <div class='player_name'>Your name is:</div>
     <input type='text' id='playerName'> </input>
     <button id='name_button'>Submit</button>
+    <br><br>
+    <div class='sub_title'>Select your difficulty</div>
+    <button disabled class='diff_button' id='easyButton'>Easy</button>
+    <button class='diff_button' id='medButton'>Medium</button>
+    <button disabled class='diff_button' id='hardButton'>Hard</button>
+
+
     <!-- Start game button -->
     <button class='buttons' id="startButton">Start game!</button>
   </div>
 
   <!------------------- Gamebox ----------------->
-  <div  class='game_screen'>
+  <div class='game_screen'>
     <div class='game_box'>
       <!-- (1) question top side -->
       <header>
@@ -74,20 +77,78 @@
 
       <!-- (2) question main side -->
       <section>
-        <div class='question'>Question 1: Choose your response:</div>
-        <div class='option'>1) Provide your real name: <div class="quote">Hi, I am Peter.</div>
+        <!-- question 1 -->
+        <div class='question' id='Q1'>Question 1: Choose your response:</div>
+        <div class='option' id='Q1A1'>1. Provide your real name: <button class="quote">Hi, I am Peter.</button>
         </div>
-        <div class='option'>2) Provide a ficticious name instead: <div class="quote">Hi, I am Gandalf Bai.</div>
+        <div class='option' id='Q1A2'>2. Provide a ficticious name instead: <button class="quote">Hi, I am Gandalf
+            Bai.</button>
         </div>
-        <div class='option'>3) Get to the point: <div class="quote">Hi, how can I help you?</div>
+        <div class='option' id='Q1A3'>3. Get to the point: <button class="quote">Hi, how can I help you?</button>
         </div>
+
+        <!-- question 2 -->
+        <div class='question' id='Q2'>Question 2: Choose your response:</div>
+        <div class='option' id='Q2A1'>1. Not very sure of the job but I am open to opportunities: <button
+            class="quote">Ok, why not?</button>
+        </div>
+        <div class='option' id='Q2A2'>2. The HR company will need to contact me so it is better to provide my number:
+          <button class="quote">Ok, my number is [actual number]</button>
+        </div>
+        <div class='option' id='Q2A3'>3. Not sure of the job, but use a friends number first. Will inform the friend
+          after
+          too, of this good opportunity: <button class="quote">Sure, my number is [a friends number]</button>
+        </div>
+
+        <!-- question 3 -->
+        <div class='question' id='Q3'>Question 3: Choose your response:</div>
+        <div class='option' id='Q3A1'>1. Answer in a range: <button class="quote">40-45</button>
+        </div>
+        <div class='option' id='Q3A2'>2. Decline to answer now: <button class="quote">Maybe I can inform the company
+            specifically?</button>
+        </div>
+        <div class='option' id='Q3A3'>3. Share actual age, as the company will require this detail: <button
+            class="quote">I'm 42 this year!</button>
+        </div>
+
+        <!-- question 4 -->
+        <div class='question' id='Q4'>Question 4: Choose your response:</div>
+        <div class='option' id='Q4A1'>1. I could do with the flexible working arrangement and money. <button
+            class="quote">Click to download</button>
+        </div>
+        <div class='option' id='Q4A2'>2. I'm not sure what is in the file, downloading is the only way to find out.
+          <button class="quote">Click to download</button>
+        </div>
+        <div class='option' id='Q4A3'>3. I'm not sure what is in the file, and downloading unknown files can be bad for
+          my
+          phone. <button class="quote">Choose not to download</button>
+        </div>
+
+        <!-- question 5 -->
+        <div class='question' id='Q5'>Question 5: Choose your response:</div>
+        <div class='option' id='Q5A1'>1. Pick up call immediately as HR wants to talk to me<button class="quote">Pick
+            up</button>
+        </div>
+        <div class='option' id='Q5A2'>2. You are not free, now and you ask for another time for call back <button
+            class="quote">Assign with HR a better time</button>
+        </div>
+        <div class='option' id='Q5A3'>3. You decide this looks too suspicious <button class="quote">End chat</button>
+        </div>
+
+
       </section>
 
       <!-- (3) question bottom side -->
 
       <section class='footer'>
-        <p id='credits'>Scam Invaders is brought to you by Justin Teh • GitHub • Major Assembly</p>
-        <button class='footer' class='buttons' id="submitButton">Submit</button>
+        <!-- <p id='credits'>Scam Invaders is brought to you by Justin Teh • GitHub • Major Assembly</p>-->
+        <button id="nextButtonQ12">Next question</button>
+        <!-- <button class='footer' class='nextButtons' id="nextButton12">Next question</button> -->
+        <button id="nextButtonQ23">Next question</button>
+
+        <button id="nextButtonQ34">Next question</button>
+        <button id="nextButtonQ45">Next question</button>
+        <button id="nextButtonQ5end">Next question</button>
       </section>
 
       <!-- (4) mobile; right main side -->
@@ -100,14 +161,17 @@
         <!--text area right btm----------->
         <!--app text area [fixed]--------->
         <!--Maybe grid 100px top btm, then fr the rest--------->
-
       </div>
 
-
-
-
-
     </div>
+
+  <div class = 'end_Screen'> 
+    <h1 class = 'end_title'>Congratulations</h1>
+    <button class='buttons' id = 'replayButton'>Replay?</button>
+  </div>  
+
+
+
   <script type="module" src="/main.js"></script>
 </body>
 

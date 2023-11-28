@@ -3,19 +3,22 @@
 
 * {
     box-sizing: border-box;
-  }
-  
-  body { background-color:  #008B8B;}
+}
 
-  .title {
-    color: #008080; 
+body {
+    background-color: #008B8B;
+}
+
+.title {
+    color: #008080;
     font-weight: bold;
     margin: none;
 }
+
 /*do nice transparent style later */
 
 .sub_title {
-    color: #008080; 
+    color: #008080;
     font-weight: bold;
     font-size: 25px;
 }
@@ -23,14 +26,12 @@
 
 /*------------------- Introduction box -----------------*/
 .intro_box {
-
-    /* visibility: visible;  */
-    /*visibility: hidden;*/     
     display: block;
     /* display: none; */
-    width: 600px;    
-    height: 350px;
+    width: 600px;
+    height: 425px;
     background-color: rgb(231, 227, 227);
+
     margin: auto;
     margin-top: 200px;
 
@@ -38,11 +39,10 @@
     padding: 20px;
     font-weight: 500;
 }
-/* rule set items styling (eg. more space) if needed */
-/* can highlight some rules */
 
 span {
-font-weight: bold;}
+    font-weight: bold;
+}
 
 .buttons {
     position: absolute;
@@ -57,45 +57,53 @@ font-weight: bold;}
 }
 
 .buttons:active {
-    background-color:gray;
+    background-color: gray;
     box-shadow: 0 2px #666;
     transform: translateY(1px);
 }
 
 #contButton1 {
-   position: relative;
-   top: -10%;
+    position: relative;
+    top: -5%;
+    left: 40%;
 }
 
+
+.intro_box {
+    display: block;
+    /* display: none; */
+    width: 600px;
+    height: 425px;
+    background-color: rgb(231, 227, 227);
+
+    margin: auto;
+    margin-top: 200px;
+
+    border-radius: 6px;
+    padding: 20px;
+    font-weight: 500;
+}
 
 /*the flex here controls the text in the button. rather than the button in the Intro_box. how? */
 /*below code doesnt work (13:37)*/
 /* .intro_box .contButton{
-    display: flex;
-    justify-content: flex-end; } */
+        display: flex;
+        justify-content: flex-end; } */
 
-#startButton {
-    display: block;
-    position: relative;
-    top: 0%;
-    left: 75%; 
-    width: 120px;
-    font-size: 15px;
-    font-weight: bold;
-}
+
 
 /*start game styles */
 /* .startButton button{
-    font-size: 25px;
-    font-weight: 500;
-    color: #007bff;
-    padding: 15px 30px;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    background: #fff;
-    cursor: pointer;
-} */
+        font-size: 25px;
+        font-weight: 500;
+        color: #007bff;
+        padding: 15px 30px;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        background: #fff;
+        cursor: pointer;
+    } */
 
 /*------------------- Difficuly & Name Box -----------------*/
 .diff_name_box {
@@ -115,11 +123,10 @@ font-weight: bold;}
 }
 
 
-
 .diff_button {
     /* height: 40px;
-    width: 100px; */
-    margin: 0px 20px 20px 0;
+        width: 100px; */
+    margin: 15px 20px 20px 0;
     border-radius: 6px;
     height: 40px;
     width: 100px;
@@ -127,7 +134,17 @@ font-weight: bold;}
 }
 
 .diff_button:hover {
-background-color: grey;
+    background-color: rgb(184, 181, 181);
+}
+
+.diff_button:focus {
+    background-color: grey;
+}
+
+.diff_button:disabled {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
 }
 
 #playerName {
@@ -135,24 +152,34 @@ background-color: grey;
     border-radius: 6px;
 }
 
-#name_button {  
+#name_button {
     margin: 0px 0 0 10px;
     border-radius: 6px;
     height: 40px;
-    width: 100px; 
+    width: 100px;
     font-weight: 500;
-
 }
+
+#startButton {
+    display: block;
+    position: relative;
+    top: -5%;
+    left: 78%;
+    width: 120px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
 /*------------------- Gamebox -----------------*/
 /*--------------------- (1) -------------------*/
-.game_screen{
-display: flex;
-justify-content: space-between;
-/* display: block;*/
- display: none;
+.game_screen {
+    display: flex;
+    justify-content: space-between;
+    /* display: block;*/
+    display: none;
 }
 
-.game_box { 
+.game_box {
     width: 700px;
     height: 500px;
     background-color: rgb(231, 227, 227);
@@ -160,6 +187,7 @@ justify-content: space-between;
     border-radius: 6px;
     padding: 10px 20px 0 20px;
 }
+
 /* how to make full screen?*/
 
 .game_box header {
@@ -168,7 +196,7 @@ justify-content: space-between;
     align-items: space-between;
 }
 
-.game_box .timer { 
+.game_box .timer {
     background-color: rgb(130, 125, 125);
     width: 100px;
     height: 40px;
@@ -180,18 +208,18 @@ justify-content: space-between;
     padding: 15px;
 }
 
-.game_box .timeleft { 
+.game_box .timeleft {
     color: white;
     font-weight: none;
 }
 
-.game_box .timer_sec { 
+.game_box .timer_sec {
     color: white;
     font-weight: bold;
 }
 
 /*--------------------- (2) -------------------*/
-.game_box .question{
+.game_box .question {
     font-weight: bold;
     margin-top: 20px;
     margin-bottom: 10px;
@@ -199,8 +227,8 @@ justify-content: space-between;
 }
 
 .game_box .option {
-margin: 20px;
-font-weight: 500;
+    margin: 20px;
+    font-weight: 500;
 }
 
 .game_box .quote {
@@ -210,7 +238,24 @@ font-weight: 500;
     border-radius: 10px;
     margin: 5px;
     padding: 10px;
-    width: 200px;
+    width: auto;
+    cursor: pointer;
+}
+
+.game_box .quote:hover {
+    background-color: rgb(187, 232, 152);
+    border: 1px solid rgb(138, 190, 99);
+    border-radius: 10px;
+    color: rgb(85, 142, 42);
+    margin: 5px;
+    padding: 10px;
+    width: auto;
+}
+
+.game_box .quote:focus {
+    background-color: rgb(187, 232, 152);
+    border: 1px solid rgb(138, 190, 99);
+    color: rgb(85, 142, 42);
 }
 
 /*--------------------- (3) -------------------*/
@@ -220,16 +265,35 @@ font-weight: 500;
     padding: 0 20px;
 
     display: flex;
-/*     justify-content: space-between;*/
+    /*     justify-content: space-between;*/
     /* why doesnt it put the credits on left & button on right? */
- justify-content: space-between;
- 
+    justify-content: space-between;
+
 }
 
-.game_box .footer #submitButton {    
-    margin: 30px 0 0 0px;
+/* .game_box .footer #nextButton12,
+    #nextButton23, #nextButton34, #nextButton45   */
+
+/* .game_box .footer #nextButtons
+    {    
+        margin: 70px 0 0 0px;
+        height: 40px;
+        width: 170px;
+        border-radius: 6px;
+        background-color: rgb(202, 201, 201);
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } */
+
+#nextButtonQ12 {
+    display: block;
+    margin: auto;
+    margin-right: -10px;
+    margin-bottom: -50px;
     height: 40px;
-    width: 100px;
+    width: 170px;
     border-radius: 6px;
     background-color: rgb(202, 201, 201);
     font-weight: bold;
@@ -238,72 +302,151 @@ font-weight: 500;
     align-items: center;
 }
 
-.game_box .footer #credits {    
-    margin-top: 75px;
-    font-size: 10px;
- }
-/* fix the style later */
-
-
-/* margin: 40px 0 0 0px;
-    padding: 5px;
+#nextButtonQ23 {
+    margin: auto;
+    margin-right: -10px;
+    margin-bottom: 0px;
     height: 40px;
-    width: 100px;
+    width: 170px;
     border-radius: 6px;
     background-color: rgb(202, 201, 201);
-    font-weight: bold; */
+    font-weight: bold;
+    display: none;
+}
+
+#nextButtonQ34 {
+    margin: auto;
+    margin-right: -10px;
+    margin-bottom: -50px;
+    height: 40px;
+    width: 170px;
+    border-radius: 6px;
+    background-color: rgb(202, 201, 201);
+    font-weight: bold;
+    display: none;
+}
+
+#nextButtonQ45 {
+    margin: auto;
+    margin-right: -10px;
+    margin-bottom: 20px;
+    height: 40px;
+    width: 170px;
+    border-radius: 6px;
+    background-color: rgb(202, 201, 201);
+    font-weight: bold;
+    display: none;
+}
+
+#nextButtonQ5end {
+    margin: auto;
+    margin-right: -10px;
+    margin-bottom: -30px;
+    height: 40px;
+    width: 170px;
+    border-radius: 6px;
+    background-color: rgb(202, 201, 201);
+    font-weight: bold;
+
+    display: none;
+}
+
+/* .game_box .footer #credits {    
+        margin-top: -270px;
+        font-size: 10px;
+     } */
+/* fix the style later */
+
+/* margin: 40px 0 0 0px;
+        padding: 5px;
+        height: 40px;
+        width: 100px;
+        border-radius: 6px;
+        background-color: rgb(202, 201, 201);
+        font-weight: bold; */
 
 /* .game_box .question_end #submitButton {    
-    margin: 0 0 0px 0px;
-    border: 1px solid;
-    width: 150px;
-} */
+        margin: 0 0 0px 0px;
+        border: 1px solid;
+        width: 150px;
+    } */
 
-
-.game_box .quote:hover {
-    background-color: rgb(187, 232, 152);
-    border: 1px solid rgb(138, 190, 99);
-    border-radius: 10px;
-    color: rgb(85, 142, 42);
-    margin: 5px;
-    padding: 10px;
-    width: 200px;
+#Q1,
+#Q1A1,
+#Q1A2,
+#Q1A3 {
+    display: block;
 }
+
+#Q2,
+#Q2A1,
+#Q2A2,
+#Q2A3 {
+    display: none;
+}
+
+#Q3,
+#Q3A1,
+#Q3A2,
+#Q3A3 {
+    display: none;
+}
+
+#Q4,
+#Q4A1,
+#Q4A2,
+#Q4A3 {
+    display: none;
+}
+
+#Q5,
+#Q5A1,
+#Q5A2,
+#Q5A3 {
+    display: none;
+}
+
+/* #Q1, #Q1A1, #Q1A2, #Q1A3 {
+        display: none;
+    } */
+
 
 /*--------------------- (4) -------------------*/
 .game_screen .smartphone {
-/*     margin: 20px 0 30px 30px;
- */ 
+    /*     margin: 20px 0 30px 30px;
+     */
     display: block;
     display: none;
     position: relative;
     margin: auto;
-    top: -98%;
-    left: 83%;
+    top: -87%;
+    left: 85%;
     width: 360px;
-    height: 640px; 
-    border: 10px black solid; 
+    height: 640px;
+    border: 10px black solid;
     border-radius: 50px;
     background-color: white;
     /* border-top-width: 60px;
-    border-bottom-width: 10px;
-     */display: grid; 
+        border-bottom-width: 10px;
+         */
+    display: grid;
     grid-template-columns: repeat(5, 1fr);
-    }
-    
+}
+
 .speaker {
-        width: 100px;
-        height: 30px;
-        margin: 5%;
-        background-color: black; 
-        grid-column-start: 3; 
-        border-radius: 10px;}
+    width: 100px;
+    height: 30px;
+    margin: 5%;
+    background-color: black;
+    grid-column-start: 3;
+    border-radius: 10px;
+}
 
 /* .smartphone .phoneContent {
-    width: 360px;
-    height: 640px;
-    background: white;
-} */
+        width: 360px;
+        height: 640px;
+        background: white;
+    } */
 
 /*------------------- End Game screen -----------------*/
 /* formatting same as Intro screen */
@@ -312,9 +455,107 @@ font-weight: 500;
 /* 3-4/5: Decent effort! You sensed something is amiss...   */
 /* 1-2/5: You fell for the scam and gave important information away... Fred not, try again! */
 
+
+.end_Screen {
+
+    background-color: white;
+    width: 600px;
+    height: 425px;
+    border-radius: 6px;
+    padding: 20px;
+    font-weight: 500;
+    margin: auto;
+    margin-top: 200px;
+
+
+    display: none;
+}
+
+/* .intro_box {
+        display: block;
+         display: none; 
+        width: 600px;
+        height: 425px;
+        background-color: rgb(231, 227, 227);
+    
+        margin: auto;
+        margin-top: 200px;
+    
+        border-radius: 6px;
+        padding: 20px;
+        font-weight: 500;
+    } */
+
+
+.end_title {
+    color: #008080;
+    font-weight: bold;
+    text-align: center;
+}
+
+#replayButton {
+
+    position: relative;
+    top: -5%;
+    left: 40%;
+
+
+}
+
+/* .end_box{
+    display: block;
+     display: none; 
+    width: 600px;
+    height: 425px;
+    background-color: rgb(231, 227, 227);
+
+    margin: auto;
+    margin-top: 200px;
+
+    border-radius: 6px;
+    padding: 20px;
+    font-weight: 500;
+} */
+
+
+/* .end_box {
+
+    display: block; 
+     
+    width: 600px;
+    height: 350px;
+    background-color: rgb(231, 227, 227);
+    margin: auto;
+    margin-top: 200px;
+    font-weight: 500;
+
+    border-radius: 6px;
+    padding: 20px;
+    display: none;
+    display: none;
+    background-color: white;
+    width: 350px; 
+
+}
+
+#againButton {
+    position: relative;
+    top: -5%;
+    left: 40%;
+    display: none;
+    }   
+
+    .end_title {
+        color: #008080; 
+        font-weight: bold;
+        margin: none;
+        text-align: center;
+    }
+ */
+
 /* //=============================================
-questions 
-1 how to move the game screen to the right? like froggy game?
-2 how to position text input box beside the text, and button beside input box?
-3 why does nameButton not register input, like border radius? is something overriding?
-4 how to move the button to the right? */
+    questions 
+    1 how to move the game screen to the right? like froggy game?
+    2 how to position text input box beside the text, and button beside input box?
+    3 why does nameButton not register input, like border radius? is something overriding?
+    4 how to move the button to the right? */
