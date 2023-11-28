@@ -148,12 +148,11 @@ background-color: grey;
 .game_screen{
 display: flex;
 justify-content: space-between;
-visibility: true;
-visibility: hidden;
+/* display: block;*/
+ display: none;
 }
 
-.game_box {
-   
+.game_box { 
     width: 700px;
     height: 500px;
     background-color: rgb(231, 227, 227);

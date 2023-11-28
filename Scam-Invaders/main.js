@@ -1,6 +1,14 @@
+ //? I need this js thing from the file game.js
+/* import { it } from "node:test";
+import { game } from "./game";  */
+
+
  /*----- constants -----*/
- const diffType = ['Easy','Medium','Hard'];
- const difficulty = diffType[1];
+/*  const diffType = ['Easy','Medium','Hard'];
+ const difficulty = diffType[1]; */
+
+
+
 
  /*----- state variables -----*/
 let playerScore = 5 ; 
@@ -10,14 +18,15 @@ let playerScore = 5 ;
 
  const contButton1 = document.querySelector('#contButton1');
  console.log(contButton1);
-
 const introBox = document.querySelector('.intro_box');
 const diffNameBox = document.querySelector('.diff_name_box');
-
 /* const difficulty = document.querySelector(diffCallback);
  */const nameInput = document.querySelector('playerName');
 //const name submit button
-const startButton = document.querySelector('.startButton');
+
+const gameScreen = document.querySelector('.game_screen');
+
+const startButton = document.querySelector('#startButton');
 const ansSubmitButton = document.querySelector('.submitButton');
 
 console.log(introBox);
@@ -28,26 +37,40 @@ console.log('introbox status: ', introBox.style.display);
 //for the name input, go back to your email input exercise to refer
 
  /*----- event listeners -----*/
-
-function nextPage() { 
+//page 1 to page 2
+const nextPage12 = () => { 
     introBox.style.display = 'none';
     console.log('introbox status: ', introBox.style.display);
     diffNameBox.style.display = 'block';
     console.log('namebox status: ', diffNameBox.style.display);
     }  
     
-contButton1.addEventListener('click', nextPage);
+contButton1.addEventListener('click', nextPage12);
 /* contButton1.addEventListener('click', nextPage(event)); */
 
-//??????????????????????????????????
+//page 2 logic
+/* const handleMode = (level) => () => {
+console.log('handleMode invoked');
+game.level = level;
+console.log(level);
+}  */
 
+/* const handleMode = () => {console.log('handleMode invoked');
+console.log(level);} */
 
- const diffButton = () => 
+/*  const diffButton = () => 
 { document.querySelector('#medButton').addEventListener('click', handleMode('med'))      };
+ */
 
-const handleMode = () => {console.log('handleMode invoked')}
+//page 2 to page 3, Game start
+const nextPage23 = () => { 
+    diffNameBox.style.display = 'none';
+    console.log('namebox status: ', diffNameBox.style.display);
+    gameScreen.style.display = 'block';
+    console.log('gamebox status: ', gameScreen.style.display);
+}  
 
-
+startButton.addEventListener('click', nextPage23);
 
  /*----- render functions -----*/
 const render = () => {};
