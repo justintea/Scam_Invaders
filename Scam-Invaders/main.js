@@ -13,6 +13,8 @@ import { game } from "./game";  */
 let startScore = 10;
 let playerScore = startScore; 
 
+let allowedTime = 10; 
+
  /*----- cached elements  -----*/
  console.log('testing12345');
 
@@ -79,8 +81,8 @@ const endTitle = document.querySelector('.end_title');
 const pointsNthanks = document.getElementById('pointsNthanks');
 const replayButton = document.getElementById('replayButton');
 
-/* let countClock = setInterval(countDown,1000);
- */let time_left = 10; 
+const secondsLeft = document.querySelector('.timer_sec');
+
 
 console.log(introBox);
 console.log(diffNameBox);
@@ -101,23 +103,9 @@ const nextPage12 = () => {
     }  
     
 contButton1.addEventListener('click', nextPage12);
-/* contButton1.addEventListener('click', nextPage(event)); */
 
-//page 2 logic
-/* const handleMode = (level) => () => {
-console.log('handleMode invoked');
-game.level = level;
-console.log(level);
-}  */
 
-/* const handleMode = () => {console.log('handleMode invoked');
-console.log(level);} */
-
-/*  const diffButton = () => 
-{ document.querySelector('#medButton').addEventListener('click', handleMode('med'))      };
- */
-
-//page 2 to page 3, Game start=========================================
+//page 2 to page 3, Game start, question 1 ==================================
 const nextPage23 = () => { 
     diffNameBox.style.display = 'none';
     console.log('namebox status: ', diffNameBox.style.display);
@@ -134,6 +122,8 @@ const nextPage23 = () => {
     Q5A2.style.display = 'none';
     Q5A3.style.display = 'none';
     nextButtonQ5end.style.display = 'none';
+
+    activateTimer(allowedTime);
 
     console.log('gamebox status: ', gameScreen.style.display);
 }  
@@ -159,6 +149,8 @@ const nextPage34 = (event) => {
     Q2A3.style.display = 'block';
     nextButtonQ23.style.display = 'block';
     console.log('Q2 on');
+
+    activateTimer(allowedTime);
 }  
 
 nextButtonQ12.addEventListener('click', nextPage34);
@@ -182,6 +174,8 @@ const nextPage45 = (event) => {
     Q3A3.style.display = 'block';
     nextButtonQ34.style.display = 'block';
     console.log('Q3 on');
+
+    activateTimer(allowedTime);
 }
 
 nextButtonQ23.addEventListener('click', nextPage45);
@@ -205,10 +199,11 @@ const nextPage56 = (event) => {
     Q4A3.style.display = 'block';
     nextButtonQ45.style.display = 'block';
     console.log('Q4 on');
+
+    activateTimer(allowedTime);
 }
 
 nextButtonQ34.addEventListener('click', nextPage56);
-
 
 q4a1Button.addEventListener('click',countPoint(4,1));
 q4a2Button.addEventListener('click',countPoint(4,2));
@@ -229,6 +224,8 @@ const nextPage67 = (event) => {
     Q5A3.style.display = 'block';
     nextButtonQ5end.style.display = 'block';
     console.log('Q5 on');
+
+    activateTimer(allowedTime);
 }
 
 nextButtonQ45.addEventListener('click', nextPage67);
@@ -238,24 +235,22 @@ q5a2Button.addEventListener('click',countPoint(5,2));
 q5a3Button.addEventListener('click',countPoint(5,3));
 
 nextButtonQ5end.addEventListener('click',moveToEndScreen);
-console.log('hi this is the ending page calling');
-
 replayButton.addEventListener('click', backToStart);
 
  /*----- functions -----*/
 
- //difficulty function          WIP
+ //difficulty function          N/A
  //page move functions          DONE, ABOVE
  //game scoring function        DONE
  //restart function             DONE
  //show final score function    DONE
 
- //timer function 
+ //timer function               WIP 
  //overall main function        
 
 // game scoring functions (part 1)
 function countPoint(q,x) {
-    console.log(`PLAYER SCORE IS NOW ${playerScore}`); 
+    console.log(`LOG: PLAYER SCORE IS NOW ${playerScore}`); 
     return () => countingSquire(q,x);
 }
 
@@ -358,14 +353,27 @@ function aVeryWrongOption(x) {
     console.log('this is the aVeryWrongOption speaking');
 }
 
+//timer function
 
- //timer function
-const countDown = () => {
-    if (time_left > 0) {
-        time_left -= 1;
-        console.log(`time left: ${time_left}`);
-    } else if (time_left === 0) {
-        console.log('time is up!'); clearInterval(countClock);}
+function activateTimer(time) {
+    secondsLeft.innerText = `${allowedTime}`;
+    let clock = setInterval(countDown, 1000);
+  
+
+    function countDown() {
+        if (time > 0) {
+            secondsLeft.innerText = `${time}`;
+            console.log(`time left: ${time}`);
+            time -= 1;} 
+            
+            else if (time === 0) {
+            secondsLeft.innerText = `${time}`;
+            console.log('time is up ');
+            clearInterval(clock);
+        }
+    }
+    //hypothesis for page to move: return sth, then if received, eventlisten next page
+    //or if event listen timer class value 0, move page. 
 }
 
 //show final score function    
