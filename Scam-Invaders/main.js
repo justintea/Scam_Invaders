@@ -1,7 +1,6 @@
- //? I need this js thing from the file game.js
+//? I need this js thing from the file game.js
 /* import { it } from "node:test";
 import { game } from "./game";  */
-
 
  /*----- constants -----*/
 /*  const diffType = ['Easy','Medium','Hard'];
@@ -11,12 +10,13 @@ import { game } from "./game";  */
 
 
  /*----- state variables -----*/
-let playerScore = 5 ; 
+let startScore = 10;
+let playerScore = startScore; 
 
  /*----- cached elements  -----*/
  console.log('testing12345');
 
- const contButton1 = document.querySelector('#contButton1');
+ const contButton1 = document.getElementById('contButton1');
  console.log(contButton1);
 const introBox = document.querySelector('.intro_box');
 const diffNameBox = document.querySelector('.diff_name_box');
@@ -26,53 +26,48 @@ const nameInput = document.querySelector('playerName');
 
 const gameScreen = document.querySelector('.game_screen');
 const gameBox = document.querySelector('.game_box');
-const startButton = document.querySelector('#startButton');
+const startButton = document.getElementById('startButton');
 const ansSubmitButton = document.querySelector('.submitButton');
 
-const q1a1Button = document.querySelector('#Q1A1');
-const q1a2Button = document.querySelector('#Q1A2');
-const q1a3Button = document.querySelector('#Q1A3');
-
+const q1a1Button = document.getElementById('Q1A1');
+const q1a2Button = document.getElementById('Q1A2');
+const q1a3Button = document.getElementById('Q1A3');
 const Q1 = document.getElementById('Q1');
 const Q1A1 = document.getElementById('Q1A1');
 const Q1A2 = document.getElementById('Q1A2');
 const Q1A3 = document.getElementById('Q1A3');
 const nextButtonQ12 = document.getElementById('nextButtonQ12');
 
-const q2a1Button = document.querySelector('#Q2A1');
-const q2a2Button = document.querySelector('#Q2A2');
-const q2a3Button = document.querySelector('#Q2A3');
-
+const q2a1Button = document.getElementById('Q2A1');
+const q2a2Button = document.getElementById('Q2A2');
+const q2a3Button = document.getElementById('Q2A3');
 const Q2 = document.getElementById('Q2');
 const Q2A1 = document.getElementById('Q2A1');
 const Q2A2 = document.getElementById('Q2A2');
 const Q2A3 = document.getElementById('Q2A3');
 const nextButtonQ23 = document.getElementById('nextButtonQ23');
 
-const q3a1Button = document.querySelector('#Q3A1');
-const q3a2Button = document.querySelector('#Q3A2');
-const q3a3Button = document.querySelector('#Q3A3');
-
+const q3a1Button = document.getElementById('Q3A1');
+const q3a2Button = document.getElementById('Q3A2');
+const q3a3Button = document.getElementById('Q3A3');
 const Q3 = document.getElementById('Q3');
 const Q3A1 = document.getElementById('Q3A1');
 const Q3A2 = document.getElementById('Q3A2');
 const Q3A3 = document.getElementById('Q3A3');
 const nextButtonQ34 = document.getElementById('nextButtonQ34');
 
-const q4a1Button = document.querySelector('#Q4A1');
-const q4a2Button = document.querySelector('#Q4A2');
-const q4a3Button = document.querySelector('#Q4A3');
-
+const q4a1Button = document.getElementById('Q4A1');
+const q4a2Button = document.getElementById('Q4A2');
+const q4a3Button = document.getElementById('Q4A3');
 const Q4 = document.getElementById('Q4');
 const Q4A1 = document.getElementById('Q4A1');
 const Q4A2 = document.getElementById('Q4A2');
 const Q4A3 = document.getElementById('Q4A3');
 const nextButtonQ45 = document.getElementById('nextButtonQ45');
 
-const q5a1Button = document.querySelector('#Q5A1');
-const q5a2Button = document.querySelector('#Q5A2');
-const q5a3Button = document.querySelector('#Q5A3');
-
+const q5a1Button = document.getElementById('Q5A1');
+const q5a2Button = document.getElementById('Q5A2');
+const q5a3Button = document.getElementById('Q5A3');
 const Q5 = document.getElementById('Q5');
 const Q5A1 = document.getElementById('Q5A1');
 const Q5A2 = document.getElementById('Q5A2');
@@ -80,16 +75,22 @@ const Q5A3 = document.getElementById('Q5A3');
 const nextButtonQ5end = document.getElementById('nextButtonQ5end');
 
 const endScreen = document.querySelector('.end_Screen');
+const endTitle = document.querySelector('.end_title');
+const pointsNthanks = document.getElementById('pointsNthanks');
 const replayButton = document.getElementById('replayButton');
+
+/* let countClock = setInterval(countDown,1000);
+ */let time_left = 10; 
 
 console.log(introBox);
 console.log(diffNameBox);
 console.log('introbox status: ', introBox.style.display);
 
+
 //difficulty is halfbaked. work on it
 //for the name input, go back to your email input exercise to refer
 
- /*----- event listeners -----*/
+ /*----- Event listeners and Render functions -----*/
 
 //page 1 to page 2
 const nextPage12 = () => { 
@@ -116,7 +117,7 @@ console.log(level);} */
 { document.querySelector('#medButton').addEventListener('click', handleMode('med'))      };
  */
 
-//page 2 to page 3, Game start
+//page 2 to page 3, Game start=========================================
 const nextPage23 = () => { 
     diffNameBox.style.display = 'none';
     console.log('namebox status: ', diffNameBox.style.display);
@@ -139,232 +140,268 @@ const nextPage23 = () => {
 
 startButton.addEventListener('click', nextPage23);
 
-// page 3, game question 1 
-//listen to button to submit
+q1a1Button.addEventListener('click',countPoint(1,1));
+q1a2Button.addEventListener('click',countPoint(1,2));
+q1a3Button.addEventListener('click',countPoint(1,3));
 
-const countingSquire1 = (x) => {
-    if (x === 1) {
-    playerScore -= 1;
-    console.log(`option is ${x}, a wrong option. SQUIRE reduces playerscore: ${playerScore}`); }
-    else if (x === 2) {
-        playerScore += 1;
-        console.log(`option is ${x}, a right option. SQUIRE adds playerscore: ${playerScore}`); }
-    else if (x === 3) {
-        playerScore = playerScore;
-        console.log(`option is ${x}, a neutral option. No change, playerscore: ${playerScore}`); }
-    }
-
-const countPoint1 = (x) => {
-    console.log(`PLAYER SCORE IS NOW ${playerScore}`); 
-    return () => countingSquire1(x);
-}
-
-q1a1Button.addEventListener('click',countPoint1(1));
-q1a2Button.addEventListener('click',countPoint1(2));
-q1a3Button.addEventListener('click',countPoint1(3));
-
-console.log(Q1);
-//page 3 to page 4, game question 2
+//page 3 to page 4, game question 2====================================
 const nextPage34 = (event) => { 
     Q1.style.display = 'none';
     Q1A1.style.display = 'none';
     Q1A2.style.display = 'none';
     Q1A3.style.display = 'none';
     nextButtonQ12.style.display = 'none';
-    console.log('something is happening here');
+    console.log('Q1 off');
 
     Q2.style.display = 'block';
     Q2A1.style.display = 'block';
     Q2A2.style.display = 'block';
     Q2A3.style.display = 'block';
     nextButtonQ23.style.display = 'block';
-    console.log('something is happening here TOO');
-
-   
+    console.log('Q2 on');
 }  
 
 nextButtonQ12.addEventListener('click', nextPage34);
 
-const countingSquire2 = (x) => {
-    if (x === 1) {
-        playerScore = playerScore;
-    console.log(`option is ${x}, a neutral option. No change, playerscore: ${playerScore}`); }
-    else if (x === 2) {
-        playerScore -= 1;
-        console.log(`option is ${x}, a wrong option. SQUIRE reduces playerscore: ${playerScore}`); }
-    else if (x === 3) {
-        playerScore -= 1;
-        console.log(`option is ${x}, a wrong option. SQUIRE reduces playerscore: ${playerScore}`); }
-    }
+q2a1Button.addEventListener('click',countPoint(2,1));
+q2a2Button.addEventListener('click',countPoint(2,2));
+q2a3Button.addEventListener('click',countPoint(2,3));
 
-const countPoint2 = (x) => {
-    console.log(`PLAYER SCORE IS NOW ${playerScore}`); 
-    return () => countingSquire2(x);
-}
-
-q2a1Button.addEventListener('click',countPoint2(1));
-q2a2Button.addEventListener('click',countPoint2(2));
-q2a3Button.addEventListener('click',countPoint2(3));
-
-//page 4 to page 5, game question 3
+//page 4 to page 5, game question 3====================================
 const nextPage45 = (event) => { 
     Q2.style.display = 'none';
     Q2A1.style.display = 'none';
     Q2A2.style.display = 'none';
     Q2A3.style.display = 'none';
     nextButtonQ23.style.display = 'none';
-    console.log('something is happening here');
+    console.log('Q2 off');
 
     Q3.style.display = 'block';
     Q3A1.style.display = 'block';
     Q3A2.style.display = 'block';
     Q3A3.style.display = 'block';
     nextButtonQ34.style.display = 'block';
-    console.log('something is happening here TOO');
+    console.log('Q3 on');
 }
 
 nextButtonQ23.addEventListener('click', nextPage45);
 
-const countingSquire3 = (x) => {
-    if (x === 1) {
-        playerScore = playerScore;
-    console.log(`option is ${x}, a neutral option. No change, playerscore: ${playerScore}`); }
-    else if (x === 2) {
-        playerScore += 1;
-        console.log(`option is ${x}, a right option. SQUIRE adds playerscore: ${playerScore}`); }
-    else if (x === 3) {
-        playerScore = playerScore;
-        playerScore -= 1;
-        console.log(`option is ${x}, a wrong option. SQUIRE reduces playerscore: ${playerScore}`); }
-    }
+q3a1Button.addEventListener('click',countPoint(3,1));
+q3a2Button.addEventListener('click',countPoint(3,2));
+q3a3Button.addEventListener('click',countPoint(3,3));
 
-const countPoint3 = (x) => {
-    console.log(`PLAYER SCORE IS NOW ${playerScore}`); 
-    return () => countingSquire3(x);
-}
-
-q3a1Button.addEventListener('click',countPoint3(1));
-q3a2Button.addEventListener('click',countPoint3(2));
-q3a3Button.addEventListener('click',countPoint3(3));
-
-//page 5 to page 6, game question 4
+//page 5 to page 6, game question 4===================================
 const nextPage56 = (event) => { 
     Q3.style.display = 'none';
     Q3A1.style.display = 'none';
     Q3A2.style.display = 'none';
     Q3A3.style.display = 'none';
     nextButtonQ34.style.display = 'none';
-    console.log('something is happening here');
+    console.log('Q3 off');
 
     Q4.style.display = 'block';
     Q4A1.style.display = 'block';
     Q4A2.style.display = 'block';
     Q4A3.style.display = 'block';
     nextButtonQ45.style.display = 'block';
-    console.log('something is happening here TOO');
+    console.log('Q4 on');
 }
 
 nextButtonQ34.addEventListener('click', nextPage56);
 
-const countingSquire4 = (x) => {
-    if (x === 1) {
-    playerScore -= 1;
-    console.log(`option is ${x}, a wrong option. SQUIRE reduces playerscore: ${playerScore}`); }
-    else if (x === 2) {
-        playerScore -= 1;
-        console.log(`option is ${x}, a wrong option. SQUIRE reduces playerscore: ${playerScore}`); }
-    else if (x === 3) {
-        playerScore = playerScore;
-        console.log(`option is ${x}, a neutral option. No change, playerscore: ${playerScore}`); }
-    }
 
-const countPoint4 = (x) => {
-    console.log(`PLAYER SCORE IS NOW ${playerScore}`); 
-    return () => countingSquire4(x);
-}
+q4a1Button.addEventListener('click',countPoint(4,1));
+q4a2Button.addEventListener('click',countPoint(4,2));
+q4a3Button.addEventListener('click',countPoint(4,3));
 
-q4a1Button.addEventListener('click',countPoint4(1));
-q4a2Button.addEventListener('click',countPoint4(2));
-q4a3Button.addEventListener('click',countPoint4(3));
-
-//page 6 to page 7, end screen
+//page 6 to page 7, end screen=========================================
 const nextPage67 = (event) => { 
     Q4.style.display = 'none';
     Q4A1.style.display = 'none';
     Q4A2.style.display = 'none';
     Q4A3.style.display = 'none';
     nextButtonQ45.style.display = 'none';
-    console.log('something is happening here');
+    console.log('Q4 off');
 
     Q5.style.display = 'block';
     Q5A1.style.display = 'block';
     Q5A2.style.display = 'block';
     Q5A3.style.display = 'block';
     nextButtonQ5end.style.display = 'block';
-    console.log('something is happening here TOO');
+    console.log('Q5 on');
 }
 
 nextButtonQ45.addEventListener('click', nextPage67);
 
-const countingSquire5 = (x) => {
-    if (x === 1) {
-    playerScore -= 1;
-    console.log(`option is ${x}, a wrong option. SQUIRE reduces playerscore: ${playerScore}`); }
-    else if (x === 2) {
-        playerScore -= 1;
-        console.log(`option is ${x}, a wrong option. SQUIRE reduces playerscore: ${playerScore}`); }
-    else if (x === 3) {
-        playerScore += 1;
+q5a1Button.addEventListener('click',countPoint(5,1));
+q5a2Button.addEventListener('click',countPoint(5,2));
+q5a3Button.addEventListener('click',countPoint(5,3));
 
-        console.log(`option is ${x}, a right option. SQUIRE adds playerscore: ${playerScore}`); }
-    }
-
-const countPoint5 = (x) => {
-    console.log(`PLAYER SCORE IS NOW ${playerScore}`); 
-    return () => countingSquire5(x);
-}
-
-q5a1Button.addEventListener('click',countPoint5(1));
-q5a2Button.addEventListener('click',countPoint5(2));
-q5a3Button.addEventListener('click',countPoint5(3));
-
-const moveToEndScreen = () => {
-console.log('can anyone see this');
-
-gameBox.style.display = 'none';
-endScreen.style.display = 'block';
-}
 nextButtonQ5end.addEventListener('click',moveToEndScreen);
-    
-const backToStart = () => {
-    endScreen.style.display = 'none';
-    introBox.style.display = 'block';
-    console.log(`ending the game, score is ${playerScore}`);
-    playerScore = 5;
-    console.log(`restarting the game, score is ${playerScore}`);
-}
+console.log('hi this is the ending page calling');
 
 replayButton.addEventListener('click', backToStart);
 
-
- /*----- render functions -----*/
-const render = () => {};
-
  /*----- functions -----*/
 
-const diffCallback = () => {
-    //please write a difficulty selector function
-    // to return an element, to assign to the variable
+ //difficulty function          WIP
+ //page move functions          DONE, ABOVE
+ //game scoring function        DONE
+ //restart function             DONE
+ //show final score function    DONE
+
+ //timer function 
+ //overall main function        
+
+// game scoring functions (part 1)
+function countPoint(q,x) {
+    console.log(`PLAYER SCORE IS NOW ${playerScore}`); 
+    return () => countingSquire(q,x);
 }
 
-const scoreLogic = (x) => {
-if (x === 'wrong') {
-playerScore -= 1; }}
+function countingSquire(q, x) {
 
-const main = () => {
-diffButton();
-render();
- };
+    if (q === 1) {
+        console.log('This is Q1');
+        if (x === 1) {
+            aWrongOption(x);
+        }
+        else if (x === 2) {
+            aGoodOption(x);
+        }
+        else if (x === 3) {
+            aNeutralOption(x);
+        }
+    }
+
+    else if (q === 2) {
+        console.log('This is Q2');
+        if (x === 1) {
+            aNeutralOption(x);
+        }
+        else if (x === 2) {
+            aVeryWrongOption(x);
+        }
+        else if (x === 3) {
+            aWrongOption(x);
+        }
+    }
+
+    else if (q === 3) {
+        console.log('This is Q3');
+        if (x === 1) {
+            aGoodOption(x);
+        }
+        else if (x === 2) {
+            aGoodOption(x);
+        }
+        else if (x === 3) {
+            aWrongOption(x);
+        }
+    }
+
+    else if (q === 4) {
+        console.log('This is Q4');
+        if (x === 1) {
+            aVeryWrongOption(x);
+        }
+        else if (x === 2) {
+            aVeryWrongOption(x);
+        }
+        else if (x === 3) {
+            aGreatOption(x);;
+        }
+    }
+
+    else if (q === 5) {
+        console.log('This is Q5');
+        if (x === 1) {
+            aVeryWrongOption(x);
+        }
+        else if (x === 2) {
+            aWrongOption(x);
+        }
+        else if (x === 3) {
+            aGoodOption(x);
+        }
+    }
+}
+
+// game scoring functions (part 2)
+function aGreatOption(x) {
+    playerScore += 2;
+    console.log(`option is ${x}, a great option. SQUIRE adds playerscore by 2: ${playerScore}`);
+    console.log('this is the aGreatOption speaking');
+} 
+
+function aGoodOption(x) {
+    playerScore += 1;
+    console.log(`option is ${x}, a right option. SQUIRE adds playerscore by 1: ${playerScore}`);
+    console.log('this is the aRighttOption speaking');
+}
+
+function aNeutralOption(x) {
+    playerScore = playerScore;
+    console.log(`option is ${x}, a neutral option. No change, playerscore: ${playerScore}`);
+    console.log('this is the aNeutralOption speaking');
+}
+
+function aWrongOption(x) {
+    playerScore -= 1;
+    console.log(`option is ${x}, a wrong option. SQUIRE reduces playerscore by 1: ${playerScore}`);
+    console.log('this is the aWrongOption speaking');
+}
+
+function aVeryWrongOption(x) {
+    playerScore -= 2;
+    console.log(`option is ${x}, a very wrong option. SQUIRE reduces playerscore by 2: ${playerScore}`);
+    console.log('this is the aVeryWrongOption speaking');
+}
+
+
+ //timer function
+const countDown = () => {
+    if (time_left > 0) {
+        time_left -= 1;
+        console.log(`time left: ${time_left}`);
+    } else if (time_left === 0) {
+        console.log('time is up!'); clearInterval(countClock);}
+}
+
+//show final score function    
+function moveToEndScreen() {
+    console.log('Moving to the last screen');
+    console.log(pointsNthanks);
+
+    if (playerScore > 6) {
+        endTitle.innerText = 'Congratulations!';
+        pointsNthanks.innerText = 'You successfully defended against a scammer, evading their best tricks!';
+        pointsNthanks.innerHTML += '<br/>';
+        pointsNthanks.innerHTML += `<strong>Your score: ${playerScore} out of 15</strong>`;
+    } else if (playerScore > 3 && playerScore < 6) {
+        endTitle.innerText = 'Decent effort!';
+        pointsNthanks.innerText = 'You sensed something is amiss...and resisted some scammy moves!';
+        pointsNthanks.innerHTML += '<br/>';
+        pointsNthanks.innerHTML += `<strong>Your score: ${playerScore} out of 15</strong>`;
+    } else {
+        endTitle.innerText = 'Oh no, try again!';
+        pointsNthanks.innerText = 'You fell for the scam and gave important personal information away...';
+        pointsNthanks.innerHTML += '<br/>';
+        pointsNthanks.innerHTML += `<strong>Your score: ${playerScore} out of 15</strong>`;
+    }
+
+    gameBox.style.display = 'none';
+    endScreen.style.display = 'block';
+}
+
+//restart function             
+function backToStart() {
+    endScreen.style.display = 'none';
+    introBox.style.display = 'block';
+    console.log(`ending the game, score is ${playerScore}`);
+    playerScore = startScore;
+    console.log(`restarting the game, score is ${playerScore}`);
+}
 
  /*----- questions -----*/
 // an array of object questions.
@@ -397,5 +434,3 @@ option3: ['3) Get to the point: "Hi, how can I help you?"','correct']},
 ]
 
  //* main operating
-main();
-
