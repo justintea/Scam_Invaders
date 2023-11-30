@@ -253,7 +253,7 @@ replayButton.addEventListener('click', backToStart);
 //timer function               DONE    
 //call & return name function  DONE
 //option reset function        DONE    CONSOLIDATED
-//optimize pg display function WIP 
+//optimize pg display function DONE 
 //overall main function        N/A
 
 //Question & option load-in    ICE                 
