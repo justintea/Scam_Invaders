@@ -5,7 +5,7 @@
 let startScore = 8;
 let playerScore = startScore;
 
-let allowedTime = 7;
+let allowedTime = 5;
 
 /*----- cached elements  -----*/
 
