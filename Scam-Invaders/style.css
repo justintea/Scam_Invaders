@@ -1,5 +1,5 @@
 /* CSS Bootstrap:              DONE  */
-/* implement 1of2 CSS styles:  WIP */
+/* implement 1of2 CSS styles:  N/A */
 
 * {
     box-sizing: border-box;
@@ -14,8 +14,6 @@ body {
     font-weight: bold;
     margin: none;
 }
-
-/*do nice transparent style later */
 
 .sub_title {
     color: #008080;
@@ -75,40 +73,13 @@ span {
     width: 150px;
 }
 
-
-
-/*the flex here controls the text in the button. rather than the button in the Intro_box. how? */
-/*below code doesnt work (13:37)*/
-/* .intro_box .contButton{
-        display: flex;
-        justify-content: flex-end; } */
-
-
-
-/*start game styles */
-/* .startButton button{
-        font-size: 25px;
-        font-weight: 500;
-        color: #007bff;
-        padding: 15px 30px;
-        outline: none;
-        border: none;
-        border-radius: 5px;
-        background: #fff;
-        cursor: pointer;
-    } */
-
 /*------------------- Difficuly & Name Box -----------------*/
 .diff_name_box {
-    /*     visibility: true;*/
-    /* visibility: hidden; */
     /* display: block; */
     display: none;
     width: 600px;
     height: 350px;
     background-color: rgb(231, 227, 227);
-    /* margin: auto;
-    margin-top: 200px; */
     font-weight: 500;
 
     border-radius: 6px;
@@ -119,12 +90,9 @@ span {
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-
 }
 
 .diff_button {
-    /* height: 40px;
-        width: 100px; */
     margin: 15px 20px 20px 0;
     border-radius: 6px;
     height: 40px;
@@ -176,20 +144,12 @@ span {
     justify-content: space-between;
     /* display: block;*/
     display: none;
-/*     position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%); */
 }
 
 .game_box {
     width: 700px;
     height: 500px;
     background-color: rgb(231, 227, 227);
-/*     margin: auto;
-    margin-top: 200px;
-    margin-left: auto; */
     border-radius: 6px;
     padding: 10px 20px 0 20px;
 
@@ -197,33 +157,8 @@ span {
     top: 50%;
     left: 35%;
     margin-right: -35%;
-    /* left: 2000%;
-    margin-right: 100%; */
-
     transform: translate(-35%, -50%);
 }
-
-
-/* position: absolute;
-top: 50%;
-left: 210%;
-margin-right: -210%;
-transform: translate(-210%, -50%); */
-
-/* how to make full screen?*/
-
-/* .end_Screen {
-
-    background-color: white;
-    width: 600px;
-    height: 425px;
-    border-radius: 6px;
-    padding: 20px;
-    font-weight: 500;
-    margin: auto;
-    margin-top: 200px;
-    display: none;
-} */
 
 .game_box header {
     display: flex;
@@ -304,26 +239,8 @@ cursor: not-allowed;
     padding: 0 20px;
 
     display: flex;
-    /*     justify-content: space-between;*/
-    /* why doesnt it put the credits on left & button on right? */
     justify-content: space-between;
 }
-
-/* .game_box .footer #nextButton12,
-    #nextButton23, #nextButton34, #nextButton45   */
-
-/* .game_box .footer #nextButtons
-    {    
-        margin: 70px 0 0 0px;
-        height: 40px;
-        width: 170px;
-        border-radius: 6px;
-        background-color: rgb(202, 201, 201);
-        font-weight: bold;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    } */
 
 #nextButtonQ12 {
     display: block;
@@ -353,9 +270,6 @@ cursor: not-allowed;
 }
 
 #nextButtonQ34 {
-    /* margin: auto;
-    margin-right: -10px;
-    margin-bottom: -50px; */
     position: relative;
     top: 80px;
     left: 460px;
@@ -368,9 +282,6 @@ cursor: not-allowed;
 }
 
 #nextButtonQ45 {
-    /* margin: auto;
-    margin-right: -10px;
-    margin-bottom: 20px; */
     position: relative;
     top: 7px;
     left: 462px; 
@@ -384,9 +295,6 @@ cursor: not-allowed;
 }
 
 #nextButtonQ5end {
-    /* margin: auto;
-    margin-right: -10px;
-    margin-bottom: -30px; */
     position: relative;
     top: 55px;
     left: 460px;
@@ -397,20 +305,6 @@ cursor: not-allowed;
     font-weight: bold;
     display: none;
 }
-
-/* .game_box .footer #credits {    
-        margin-top: -270px;
-        font-size: 10px;
-     } */
-/* fix the style later */
-
-/* margin: 40px 0 0 0px;
-        padding: 5px;
-        height: 40px;
-        width: 100px;
-        border-radius: 6px;
-        background-color: rgb(202, 201, 201);
-        font-weight: bold; */
 
 /* .game_box .question_end #submitButton {    
         margin: 0 0 0px 0px;
@@ -458,10 +352,6 @@ cursor: not-allowed;
 .game_screen .smartphone {
 
     display: none;
-
-    /* position: relative;
-    top: -470px;
-    left: 700px; */
     width: 360px;
     height: 640px;
     border: 10px black solid;
@@ -538,8 +428,7 @@ left: 80%;
     margin: 4px 10px 4px 10px;
     padding: 10px;
     border-radius: 10px;
-/*     width: min-content;
- */    width: fit-content;
+    width: fit-content;
 }
 
 #Q1M1 { 
@@ -688,8 +577,6 @@ top: -96%;
 #phonefunc {
 width: 100%;
 
-/* position: absolute;
-top: -57%; */
 position: absolute;
 top: 89%;
 }
@@ -701,41 +588,12 @@ top: 89%;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px; 
 
- /*    position: relative;
-    top: -57.5%; */
     position: absolute;
     top: 94%;
  }
 
 
-
-/* #chatbody{
-    display: none;
-    position: relative;
-    top: -30px;
-    width: 340px;
-    height: 450px;
-    background-color: #A8C389;
-    border-radius: 0px;}
- */
-
-
-
-
-/* .smartphone .phoneContent {
-        width: 360px;
-        height: 640px;
-        background: white;
-    } */
-
 /*------------------- End Game screen -----------------*/
-/* formatting same as Intro screen */
-/* says 3 possible things */
-/* 5/5: Congratulations! You successfully defended against a scammer! */
-/* 3-4/5: Decent effort! You sensed something is amiss...   */
-/* 1-2/5: You fell for the scam and gave important information away... Fred not, try again! */
-
-
 .end_Screen {
 
     background-color: white;
@@ -752,22 +610,6 @@ top: 89%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
 }
-
-/* .intro_box {
-        display: block;
-         display: none; 
-        width: 600px;
-        height: 425px;
-        background-color: rgb(231, 227, 227);
-    
-        margin: auto;
-        margin-top: 200px;
-    
-        border-radius: 6px;
-        padding: 20px;
-        font-weight: 500;
-    } */
-
 
 .end_title {
     color: #008080;
@@ -793,61 +635,3 @@ position: relative;
 top: 10px;
 left: 225px;
 }
-
-/* .end_box{
-    display: block;
-     display: none; 
-    width: 600px;
-    height: 425px;
-    background-color: rgb(231, 227, 227);
-
-    margin: auto;
-    margin-top: 200px;
-
-    border-radius: 6px;
-    padding: 20px;
-    font-weight: 500;
-} */
-
-
-/* .end_box {
-
-    display: block; 
-     
-    width: 600px;
-    height: 350px;
-    background-color: rgb(231, 227, 227);
-    margin: auto;
-    margin-top: 200px;
-    font-weight: 500;
-
-    border-radius: 6px;
-    padding: 20px;
-    display: none;
-    display: none;
-    background-color: white;
-    width: 350px; 
-
-}
-
-#againButton {
-    position: relative;
-    top: -5%;
-    left: 40%;
-    display: none;
-    }   
-
-    .end_title {
-        color: #008080; 
-        font-weight: bold;
-        margin: none;
-        text-align: center;
-    }
- */
-
-/* //=============================================
-    questions 
-    1 how to move the game screen to the right? like froggy game?
-    2 how to position text input box beside the text, and button beside input box?
-    3 why does nameButton not register input, like border radius? is something overriding?
-    4 how to move the button to the right? */

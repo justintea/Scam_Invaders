@@ -34,7 +34,7 @@
     <br>
     <div class='sub_title'>Rules</div>
     <div class='rule_set'>
-      <div>1. You start with <span>10 points</span> and the objective is to end with high points.</div>
+      <div>1. You start with <span>8 points</span> and the objective is to end with high points.</div>
       <div>2. Selecting wrong answers loses you points, while selecting the right ones gains you points.</div>
       <div>3. Some <span>critical answers</span> will make you lose or gain more than 1 point.</div>
       <div>4. You have <span>10 seconds</span> for each question.</div>
@@ -47,8 +47,12 @@
   <!------------------- Diffculty & Player info ----------------->
   <div class='diff_name_box'>
     <div class='sub_title'>Player</div>
-    <div class='player_name'>Your name is:</div>
-    <input type='text' id='playerName'> </input>
+    
+ <!--    <div class='player_name'>Your name is:</div>
+    <input type='text' id='playerName'> </input> -->
+    <label>Your name is:</label><br>
+    <input type = 'text' id = 'playerField' name = 'playerName'>
+
     <button id='name_button'>Submit</button>
     <br><br>
     <div class='sub_title'>Select your difficulty</div>
@@ -89,8 +93,8 @@
 
         <!-- question 2 -->
         <div class='question' id='Q2'>Question 2: Choose your response:</div>
-        <div class='option' id='Q2A1'>1. Not very sure of the job but I am open to opportunities: <button
-            class="quote">Ok, why not?</button>
+        <div class='option' id='Q2A1'>1. Not very sure of the job but I am open to hearing about opportunities: <button
+            class="quote">Ok, could you tell me more?</button>
         </div>
         <div class='option' id='Q2A2'>2. The HR company needs to contact me so it's better to provide my number:
           <button class="quote">Ok, my number is [your actual number]</button>
@@ -107,7 +111,7 @@
             specifically?</button>
         </div>
         <div class='option' id='Q3A3'>3. Share actual age, as the company will require this detail: <button
-            class="quote">I'm 42 this year!</button>
+            class="quote">I'm 42 this year.</button>
         </div>
 
         <!-- question 4 -->

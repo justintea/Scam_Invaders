@@ -1,30 +1,22 @@
-//? I need this js thing from the file game.js
-/* import { it } from "node:test";
-import { game } from "./game";  */
+/*----- constants -----*/
+//N/A
+/*----- state variables -----*/
 
- /*----- constants -----*/
-/*  const diffType = ['Easy','Medium','Hard'];
- const difficulty = diffType[1]; */
+let startScore = 8;
+let playerScore = startScore;
 
+let allowedTime = 5;
 
+/*----- cached elements  -----*/
 
-
- /*----- state variables -----*/
-let startScore = 10;
-let playerScore = startScore; 
-
-let allowedTime = 10; 
-
- /*----- cached elements  -----*/
- console.log('testing12345');
-
- const contButton1 = document.getElementById('contButton1');
- console.log(contButton1);
+const contButton1 = document.getElementById('contButton1');
+console.log(contButton1);
 const introBox = document.querySelector('.intro_box');
 const diffNameBox = document.querySelector('.diff_name_box');
 /* const difficulty = document.querySelector(diffCallback);*/
-const nameInput = document.querySelector('playerName');
 /*const name submit button */
+let playerName ='';
+const nameSubmitButton = document.getElementById('name_button');
 
 const gameScreen = document.querySelector('.game_screen');
 const gameBox = document.querySelector('.game_box');
@@ -88,33 +80,32 @@ const replayButton = document.getElementById('replayButton');
 const secondsLeft = document.querySelector('.timer_sec');
 const quoteButtons = document.getElementsByClassName('quote');
 
-console.log(introBox);
-console.log(diffNameBox);
-console.log('introbox status: ', introBox.style.display);
+const questionClass = document.getElementsByClassName('question');
+const optionClass = document.getElementsByClassName('option');
+const messagesClass = document.getElementsByClassName('messages');
 
-
-//difficulty is halfbaked. work on it
-//for the name input, go back to your email input exercise to refer
-
- /*----- Event listeners and Render functions -----*/
+/*----- Event listeners and Render functions -----*/
 
 //page 1 to page 2
-const nextPage12 = () => { 
+const nextPage12 = () => {
     introBox.style.display = 'none';
     console.log('introbox status: ', introBox.style.display);
     diffNameBox.style.display = 'block';
     console.log('namebox status: ', diffNameBox.style.display);
-    }  
-    
-contButton1.addEventListener('click', nextPage12);
+}
 
+contButton1.addEventListener('click', nextPage12);
+nameSubmitButton.addEventListener('click', recordName);
 
 //page 2 to page 3, Game start, question 1 ==================================
-const nextPage23 = () => { 
+const nextPage23 = () => {
     diffNameBox.style.display = 'none';
     console.log('namebox status: ', diffNameBox.style.display);
     gameScreen.style.display = 'block';
     gameBox.style.display = 'block';
+
+    // Display = None consolidator function here
+
     Q1.style.display = 'block';
     Q1A1.style.display = 'block';
     Q1A2.style.display = 'block';
@@ -150,24 +141,25 @@ const nextPage23 = () => {
     activateTimer(allowedTime);
 
     console.log('gamebox status: ', gameScreen.style.display);
-}  
+}
 
 startButton.addEventListener('click', nextPage23);
 
-q1a1Button.addEventListener('click',countPoint(1,1));
-q1a2Button.addEventListener('click',countPoint(1,2));
-q1a3Button.addEventListener('click',countPoint(1,3));
+q1a1Button.addEventListener('click', countPoint(1, 1));
+q1a2Button.addEventListener('click', countPoint(1, 2));
+q1a3Button.addEventListener('click', countPoint(1, 3));
 
 //page 3 to page 4, game question 2====================================
-const nextPage34 = (event) => { 
-    Q1.style.display = 'none';
+const nextPage34 = (event) => {
+  Q1.style.display = 'none';
     Q1A1.style.display = 'none';
     Q1A2.style.display = 'none';
     Q1A3.style.display = 'none';
     nextButtonQ12.style.display = 'none';
-    console.log('Q1 off');
+    
+console.log('Q1 off');
 
-    Q1M1.style.display = 'none';
+ Q1M1.style.display = 'none';
     Q1M2.style.display = 'none';
     Q1M3.style.display = 'none';
 
@@ -182,17 +174,13 @@ const nextPage34 = (event) => {
 
     Q5M1.style.display = 'none';
     Q5M2.style.display = 'none';
-    Q5M3.style.display = 'none';
-    
+    Q5M3.style.display = 'none'; 
+
     Q2.style.display = 'block';
     Q2A1.style.display = 'block';
     Q2A2.style.display = 'block';
     Q2A3.style.display = 'block';
     nextButtonQ23.style.display = 'block';
-    for (let i=0; i<quoteButtons.length; i++) {
-        console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);
-        quoteButtons[i].disabled = false; 
-        console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`); }
     console.log('Q2 on');
 
     Q2M1.style.display = 'block';
@@ -200,16 +188,18 @@ const nextPage34 = (event) => {
     Q2M3.style.display = 'block';
 
     activateTimer(allowedTime);
-}  
+    resetOptionButtons();
+
+}
 
 nextButtonQ12.addEventListener('click', nextPage34);
 
-q2a1Button.addEventListener('click',countPoint(2,1));
-q2a2Button.addEventListener('click',countPoint(2,2));
-q2a3Button.addEventListener('click',countPoint(2,3));
+q2a1Button.addEventListener('click', countPoint(2, 1));
+q2a2Button.addEventListener('click', countPoint(2, 2));
+q2a3Button.addEventListener('click', countPoint(2, 3));
 
 //page 4 to page 5, game question 3====================================
-const nextPage45 = (event) => { 
+const nextPage45 = (event) => {
     Q2.style.display = 'none';
     Q2A1.style.display = 'none';
     Q2A2.style.display = 'none';
@@ -239,13 +229,10 @@ const nextPage45 = (event) => {
     Q3A2.style.display = 'block';
     Q3A3.style.display = 'block';
 
-   
+
     nextButtonQ34.style.display = 'block';
-    for (let i=0; i<quoteButtons.length; i++) {
-        console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);
-        quoteButtons[i].disabled = false; 
-        console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);
-    }
+    resetOptionButtons();
+
     console.log('Q3 on');
 
     Q3M1.style.display = 'block';
@@ -257,12 +244,12 @@ const nextPage45 = (event) => {
 
 nextButtonQ23.addEventListener('click', nextPage45);
 
-q3a1Button.addEventListener('click',countPoint(3,1));
-q3a2Button.addEventListener('click',countPoint(3,2));
-q3a3Button.addEventListener('click',countPoint(3,3));
+q3a1Button.addEventListener('click', countPoint(3, 1));
+q3a2Button.addEventListener('click', countPoint(3, 2));
+q3a3Button.addEventListener('click', countPoint(3, 3));
 
 //page 5 to page 6, game question 4===================================
-const nextPage56 = (event) => { 
+const nextPage56 = (event) => {
     Q3.style.display = 'none';
     Q3A1.style.display = 'none';
     Q3A2.style.display = 'none';
@@ -291,11 +278,6 @@ const nextPage56 = (event) => {
     Q4A2.style.display = 'block';
     Q4A3.style.display = 'block';
     nextButtonQ45.style.display = 'block';
-    for (let i=0; i<quoteButtons.length; i++) {
-        console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);
-        quoteButtons[i].disabled = false; 
-        console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);
-    }
     console.log('Q4 on');
 
     Q4M1.style.display = 'block';
@@ -304,16 +286,17 @@ const nextPage56 = (event) => {
     Q4M4.style.display = 'block';
 
     activateTimer(allowedTime);
+    resetOptionButtons();
 }
 
 nextButtonQ34.addEventListener('click', nextPage56);
 
-q4a1Button.addEventListener('click',countPoint(4,1));
-q4a2Button.addEventListener('click',countPoint(4,2));
-q4a3Button.addEventListener('click',countPoint(4,3));
+q4a1Button.addEventListener('click', countPoint(4, 1));
+q4a2Button.addEventListener('click', countPoint(4, 2));
+q4a3Button.addEventListener('click', countPoint(4, 3));
 
 //page 6 to page 7, end screen=========================================
-const nextPage67 = (event) => { 
+const nextPage67 = (event) => {
     Q4.style.display = 'none';
     Q4A1.style.display = 'none';
     Q4A2.style.display = 'none';
@@ -331,11 +314,6 @@ const nextPage67 = (event) => {
     Q5A2.style.display = 'block';
     Q5A3.style.display = 'block';
     nextButtonQ5end.style.display = 'block';
-    for (let i=0; i<quoteButtons.length; i++) {
-        console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);
-        quoteButtons[i].disabled = false; 
-        console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);
-    }
     console.log('Q5 on');
 
     Q5M1.style.display = 'block';
@@ -343,42 +321,48 @@ const nextPage67 = (event) => {
     Q5M3.style.display = 'block';
 
     activateTimer(allowedTime);
+    resetOptionButtons();
+
 }
 
 nextButtonQ45.addEventListener('click', nextPage67);
 
-q5a1Button.addEventListener('click',countPoint(5,1));
-q5a2Button.addEventListener('click',countPoint(5,2));
-q5a3Button.addEventListener('click',countPoint(5,3));
+q5a1Button.addEventListener('click', countPoint(5, 1));
+q5a2Button.addEventListener('click', countPoint(5, 2));
+q5a3Button.addEventListener('click', countPoint(5, 3));
 
-nextButtonQ5end.addEventListener('click',moveToEndScreen);
+nextButtonQ5end.addEventListener('click', moveToEndScreen);
 replayButton.addEventListener('click', backToStart);
 
- /*----- functions -----*/
+/*----- functions -----*/
 
- //difficulty function          N/A
- //page move functions          DONE, ABOVE
- //game scoring function        DONE
- //countdown-points mechanism   DONE
- //restart function             DONE
- //show final score function    DONE
+//difficulty function          N/A
+//input function               DONE
+//page move functions          DONE    ABOVE
+//game scoring function        DONE    CONSOLIDATED
+//countdown-points mechanism   DONE
+//restart function             DONE
+//show final score function    DONE
 
+//timer function               DONE    
+//call & return name function  DONE
+//option reset function        DONE    CONSOLIDATED
+//optimize pg display function WIP 
+//overall main function        N/A
 
-
- //timer function               WIP 
- //overall main function        N/A
+//Question & option load-in    ICE
+//Messages load-in             ICE
 
 // game scoring functions (part 1)
-function countPoint(q,x) {
-    console.log(`LOG: PLAYER SCORE IS NOW ${playerScore}`); 
-        return () => countingSquire(q,x);
+function countPoint(q, x) {
+    console.log(`LOG: PLAYER SCORE IS NOW ${playerScore}`);
+    return () => countingSquire(q, x);
 }
 
 function countingSquire(q, x) {
-    for (let i=0; i<quoteButtons.length; i++) {
-        console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);
-        quoteButtons[i].disabled = true; 
-        console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`); }
+    for (let i = 0; i < quoteButtons.length; i++) {
+        quoteButtons[i].disabled = true;
+    }
 
     if (q === 1) {
 
@@ -397,7 +381,7 @@ function countingSquire(q, x) {
     else if (q === 2) {
         console.log('This is Q2');
         if (x === 1) {
-            aNeutralOption(x);
+            aGoodOption(x);
         }
         else if (x === 2) {
             aVeryWrongOption(x);
@@ -442,7 +426,7 @@ function countingSquire(q, x) {
             aWrongOption(x);
         }
         else if (x === 3) {
-            aGoodOption(x);
+            aGreatOption(x);
         }
     }
 }
@@ -452,10 +436,7 @@ function aGreatOption(x) {
     playerScore += 2;
     console.log(`option is ${x}, a great option. SQUIRE adds playerscore by 2: ${playerScore}`);
     console.log('this is the aGreatOption speaking');
-    // wondering....how to deal with the edge case
-    
-    // wondering....how to deal with the edge case
-} 
+}
 
 function aGoodOption(x) {
     playerScore += 1;
@@ -491,36 +472,30 @@ function activateTimer(time) {
         if (time > 0) {
             secondsLeft.innerText = `${time}`;
             console.log(`time left: ${time}`);
-            time -= 1;} 
-/*             else if ( ) {
-            clearInterval(clock);
-            } */
-            else if (time === 0) {
+            time -= 1;
+        }
+        /*             else if ( ) {
+                    clearInterval(clock);
+                    } */
+        else if (time === 0) {
             secondsLeft.innerText = `${time}`;
             console.log('time is up ');
 
             const buttons = document.getElementsByClassName('quote');
-            for (let i=0; i<buttons.length; i++) {
-                buttons[i].disabled= true;
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].disabled = true;
             }
-
-            /* console.log(`Score initially was: ${playerScore}`);
-            playerScore -= 1; 
-            console.log(`Score now is: ${playerScore}`); */
-            //WRITE THIS TOMORROW- HOW TO MINUS, WHILE NOT MINUSING IF ONE PICKS BEFORE TIME ENDS
-
             clearInterval(clock);
         }
     }
-    //hypothesis for page to move: return sth, then if received, eventlisten next page
-    //or if event listen timer class value 0, move page. 
-    
-} 
-
-function resetOptionButtons() {
-    //try to substitute
 }
 
+function resetOptionButtons() {
+    for (let i = 0; i < quoteButtons.length; i++) {
+/*         console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);*/
+        quoteButtons[i].disabled = false;
+/*         console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);*/    }
+}
 
 //show final score function    
 function moveToEndScreen() {
@@ -529,17 +504,17 @@ function moveToEndScreen() {
 
     if (playerScore > 12) {
         endTitle.innerText = 'Congratulations!';
-        pointsNthanks.innerText = 'You successfully defended against a scammer, evading their best tricks!';
+        pointsNthanks.innerText = `${playerName}, you successfully defended against a scammer, evading their best tricks!`;
         pointsNthanks.innerHTML += '<br/>';
         pointsNthanks.innerHTML += `<strong>Your score: ${playerScore} out of 15</strong>`;
-    } else if (playerScore > 7 && playerScore < 12) {
+    } else if (playerScore > 8 && playerScore < 12) {
         endTitle.innerText = 'Decent effort!';
-        pointsNthanks.innerText = 'You sensed something is amiss...and resisted some scammy moves!';
+        pointsNthanks.innerText = `${playerName}, you sensed something is amiss...and resisted some scammy moves!`;
         pointsNthanks.innerHTML += '<br/>';
         pointsNthanks.innerHTML += `<strong>Your score: ${playerScore} out of 15</strong>`;
     } else {
         endTitle.innerText = 'Oh no, try again!';
-        pointsNthanks.innerText = 'You fell for the scam and gave important personal information away...';
+        pointsNthanks.innerText = `${playerName}, you fell for the scam and gave important personal information away...`;
         pointsNthanks.innerHTML += '<br/>';
         pointsNthanks.innerHTML += `<strong>Your score: ${playerScore} out of 15</strong>`;
     }
@@ -548,48 +523,77 @@ function moveToEndScreen() {
     endScreen.style.display = 'block';
 }
 
+//call & return name function
+function recordName() {
+playerName = document.getElementById('playerField').value;
+}
+
+//
+function QnOptnMsgReset() {
+    for (let i = 0; i < questionClass.length; i++) {
+        questionClass[i].style.display = 'none'
+    }
+
+    for (let i = 0; i < optionClass.length; i++) {
+        optionClass[i].style.display = 'none'
+    }
+
+    for (let i = 0; i < messagesClass.length; i++) {
+        messagesClass[i].style.display = 'none'
+    }
+}
+
 //restart function             
 function backToStart() {
     endScreen.style.display = 'none';
     introBox.style.display = 'block';
     console.log(`ending the game, score is ${playerScore}`);
     playerScore = startScore;
-    for (let i=0; i<quoteButtons.length; i++) {
+    for (let i = 0; i < quoteButtons.length; i++) {
         console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);
-        quoteButtons[i].disabled = false; 
+        quoteButtons[i].disabled = false;
         console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);
     }
     console.log(`restarting the game, score is ${playerScore}`);
 }
 
- /*----- questions -----*/
+
+/*----- questions -----*/
 // an array of object questions.
 // each object has the q number, options as objects (options, correct/wrong stattus) 
 let QnA = [
-{qNumber: 1, 
-option1: ['1) Provide your real name: "Hi, I am (real name)"','wrong'],
-option2: ['2) Provide a ficticious name instead: "Hi, I am Gandalf Bai"','correct'],
-option3: ['3) Get to the point: "Hi, how can I help you?"','correct']},
+    {
+        qNumber: 1,
+        option1: ['1) Provide your real name: "Hi, I am (real name)"', 'wrong'],
+        option2: ['2) Provide a ficticious name instead: "Hi, I am Gandalf Bai"', 'correct'],
+        option3: ['3) Get to the point: "Hi, how can I help you?"', 'correct']
+    },
 
-{qNumber: 2,
-    option1: ['1) Not very sure of the job but I am open to opportunities: "Ok, why not?"','correct'],
-    option2: ['2) The HR company will need to contact me so it is better to provide my number: "ok, my number is [actual number]"','wrong'],
-    option3: ['3) Not sure of the job, but use a friends number first. Will inform the friend after too, of this good opportunity: "sure, my number is [a friends number]"','wrong']},
+    {
+        qNumber: 2,
+        option1: ['1) Not very sure of the job but I am open to opportunities: "Ok, why not?"', 'correct'],
+        option2: ['2) The HR company will need to contact me so it is better to provide my number: "ok, my number is [actual number]"', 'wrong'],
+        option3: ['3) Not sure of the job, but use a friends number first. Will inform the friend after too, of this good opportunity: "sure, my number is [a friends number]"', 'wrong']
+    },
 
-{qNumber: 3,
-    option1: ['1) Answer in a range: "40-45"','correct'],
-    option2: ['2) Decline to answer now: "Maybe I can inform the company specificallly?"','correct'],
-    option3: ['3) Share actual age, as the company will require this detail: "42" ','wrong']},
+    {
+        qNumber: 3,
+        option1: ['1) Answer in a range: "40-45"', 'correct'],
+        option2: ['2) Decline to answer now: "Maybe I can inform the company specificallly?"', 'correct'],
+        option3: ['3) Share actual age, as the company will require this detail: "42" ', 'wrong']
+    },
 
-{qNumber: 4,
-    option1: ['1) I could do with the flexible working arrangement and money. Click to download.','wrong'],
-    option2: ['2) I am not sure what is in the file, downloading is the only way to find out.','wrong'],
-    option3: ['3) I am not sure what is in the file, and downloading unknown files can be bad for my phone.','correct']},
-    
-{qNumber: 5,
-    option1: ['1) Pick up call immediately as HR wants to talk to me.','wrong'],
-    option2: ['2) You are not free, now and you ask for another time for call back.','wrong'],
-    option3: ['3) You decide this looks too suspicious.','correct']},
+    {
+        qNumber: 4,
+        option1: ['1) I could do with the flexible working arrangement and money. Click to download.', 'wrong'],
+        option2: ['2) I am not sure what is in the file, downloading is the only way to find out.', 'wrong'],
+        option3: ['3) I am not sure what is in the file, and downloading unknown files can be bad for my phone.', 'correct']
+    },
+
+    {
+        qNumber: 5,
+        option1: ['1) Pick up call immediately as HR wants to talk to me.', 'wrong'],
+        option2: ['2) You are not free, now and you ask for another time for call back.', 'wrong'],
+        option3: ['3) You decide this looks too suspicious.', 'correct']
+    },
 ]
-
- //* main operating
