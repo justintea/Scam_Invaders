@@ -9,6 +9,7 @@ The game was designed and implemented using HTML, CSS, and Javascript while atte
 Graph 1: Scam cases on a rise, with a 65% increase to 22k this past year 
 ![Project1_graph1](https://github.com/justintea/Scam_Invaders/assets/37412968/2f0da4cf-29a8-4905-a38f-3d0c28148099)
 
+
 Graph 2: Scam monetary impact is high, at ~$330m
 ![Project1_graph2](https://github.com/justintea/Scam_Invaders/assets/37412968/aa73e0fd-de91-4a23-a584-633b81b2835c)
 
