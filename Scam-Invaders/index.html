@@ -2,7 +2,6 @@
 <!--3 'screen' headers:         DONE  -->
 <!--CSS Bootstrap:              DONE  -->
 <!--implement 1of2 CSS styles:  WIP -->
-
 <!doctype html>
 <html lang="en">
 
@@ -30,7 +29,8 @@
   <div class='intro_box'>
     <h1 class='title'>Scam Invaders</h1>
     <div class='info_content'>Welcome to Scam Invaders, a game where you help provide the right,
-      discerning replies to suspicious messages from scammers of all sorts! Someone is messaging you via Telegram, but you don't know the person...</div>
+      discerning replies to suspicious messages from scammers of all sorts! Someone is messaging you via Telegram, but
+      you don't know the person...</div>
     <br>
     <div class='sub_title'>Rules</div>
     <div class='rule_set'>
@@ -38,7 +38,6 @@
       <div>2. Selecting wrong answers loses you points, while selecting the right ones gains you points.</div>
       <div>3. Some <span>critical answers</span> will make you lose or gain more than 1 point.</div>
       <div>4. You have <span>10 seconds</span> for each question.</div>
-      <!--<div>3. You cannot select options if time is up, and 1 point is deducted.</div>-->
     </div>
     <br>
     <button class='buttons' id="contButton1">Continue</button>
@@ -47,11 +46,9 @@
   <!------------------- Diffculty & Player info ----------------->
   <div class='diff_name_box'>
     <div class='sub_title'>Player</div>
-    
- <!--    <div class='player_name'>Your name is:</div>
-    <input type='text' id='playerName'> </input> -->
+
     <label>Your name is:</label><br>
-    <input type = 'text' id = 'playerField' name = 'playerName'>
+    <input type='text' id='playerField' name='playerName'>
 
     <button id='name_button'>Submit</button>
     <br><br>
@@ -59,7 +56,6 @@
     <button disabled class='diff_button' id='easyButton'>e-Commerce scam</button>
     <button class='diff_button' id='medButton'>Job scam</button>
     <button disabled class='diff_button' id='hardButton'>Love scam</button>
-
 
     <!-- Start game button -->
     <button class='buttons' id="startButton">Start game!</button>
@@ -83,9 +79,11 @@
       <section>
         <!-- question 1 -->
         <div class='question' id='Q1'>Question 1: Choose your response:</div>
-        <div class='option' id='Q1A1'>1. Provide your real name: <button class="quote" id = 'quoteName'>Hi, I am Peter Pek.</button>
+        <div class='option' id='Q1A1'>1. Provide your real name: <button class="quote" id='quoteName'>Hi, I am Peter
+            Pek.</button>
         </div>
-        <div class='option' id='Q1A2'>2. Provide a nickname or ficticious name instead: <button class="quote">Hi, I am Gandalf
+        <div class='option' id='Q1A2'>2. Provide a nickname or ficticious name instead: <button class="quote">Hi, I am
+            Gandalf
             Bai.</button>
         </div>
         <div class='option' id='Q1A3'>3. Get to the point: <button class="quote">Hi, how can I help you?</button>
@@ -100,7 +98,7 @@
           <button class="quote">Ok, my number is [your actual number]</button>
         </div>
         <div class='option' id='Q2A3'>3. Not sure of the job, but I will use a friend's number first.
-         <button class="quote">Sure, my number is [a friend's number]</button>
+          <button class="quote">Sure, my number is [a friend's number]</button>
         </div>
 
         <!-- question 3 -->
@@ -138,88 +136,74 @@
         <div class='option' id='Q5A3'>3. You decide this looks too suspicious. <button class="quote">End chat</button>
         </div>
 
-
       </section>
-
+      
       <!-- (3) question bottom side -->
 
       <section class='footer'>
         <!-- <p id='credits'>Scam Invaders is brought to you by Justin Teh • GitHub • Major Assembly</p>-->
-        <button class = 'buttons' id="nextButtonQ12">Next question</button>
+        <button class='buttons' id="nextButtonQ12">Next question</button>
         <!-- <button class='footer' class='nextButtons' id="nextButton12">Next question</button> -->
-        <button class = 'buttons' id="nextButtonQ23">Next question</button>
+        <button class='buttons' id="nextButtonQ23">Next question</button>
 
-        <button class = 'buttons' id="nextButtonQ34">Next question</button>
-        <button class = 'buttons' id="nextButtonQ45">Next question</button>
-        <button class = 'buttons' id="nextButtonQ5end">Next question</button>
+        <button class='buttons' id="nextButtonQ34">Next question</button>
+        <button class='buttons' id="nextButtonQ45">Next question</button>
+        <button class='buttons' id="nextButtonQ5end">Next question</button>
       </section>
 
       <!-- (4) mobile; right main side -->
       <div class='smartphone'>
-      
+
         <div class='banner' id='chatbanner'></div>
         <div class='banner' id='speaker'></div>
         <div class='banner' id='displayName'>Unknown</div>
 
-        <img id = 'phoneProfilePic' src="\1 AI DP.png" alt="Scammer profile picture">
-        <img id = 'phoneBG' src="\2 chatbg.jpg" alt="Telegram background">
+        <img id='phoneProfilePic' src="\1 AI DP.png" alt="Scammer profile picture">
+        <img id='phoneBG' src="\2 chatbg.jpg" alt="Telegram background">
 
-        <div class = 'messages' id = 'Q1M1'>Hi  </div>
-        <div class = 'messages' id = 'Q1M2'>I'm Jane from HROne at SG. Our companies client are hiring new staff urgently</div>
-        <div class = 'messages' id = 'Q1M3'>How may I address you?</div>
+        <div class='messages' id='Q1M1'>Hi </div>
+        <div class='messages' id='Q1M2'>I'm Jane from HROne at SG. Our companies client are hiring new staff urgently
+        </div>
+        <div class='messages' id='Q1M3'>How may I address you?</div>
 
-        <div class = 'messages' id = 'Q2M1'>   </div>
-        <div class = 'messages' id = 'Q2M2'>Ok, thanks you for replying</div>
-        <div class = 'messages' id = 'Q2M3'>can I assign my Person in-charge to forward full details to you to your Whatsapp? So you can look first, and decide it suitable for you or not. Ok?</div>
+        <div class='messages' id='Q2M1'> </div>
+        <div class='messages' id='Q2M2'>Ok, thanks you for replying</div>
+        <div class='messages' id='Q2M3'>can I assign my Person in-charge to forward full details to you to your
+          Whatsapp? So you can look first, and decide it suitable for you or not. Ok?</div>
 
-        <div class = 'messages' id = 'Q3M1'>   </div>
-        <div class = 'messages' id = 'Q3M2'>thank you, my PIC will share job details and about salary with you by this week. Our SG companies are preparing many new positions, so can I ask what is your age?</div>
-        <img class = 'messages' id = 'Q3M3' src="\4 scammypic.JPG" alt="Scam advertisement">
+        <div class='messages' id='Q3M1'> </div>
+        <div class='messages' id='Q3M2'>thank you, my PIC will share job details and about salary with you by this week.
+          Our SG companies are preparing many new positions, so can I ask what is your age?</div>
+        <img class='messages' id='Q3M3' src="\4 scammypic.JPG" alt="Scam advertisement">
 
-        <div class = 'messages' id = 'Q4M1'>   </div>
-        <div class = 'messages' id = 'Q4M2'>thanks you for sharing, sure I will note that down</div>
-        <div class = 'messages' id = 'Q4M3'>this J.0.B vacancy is special. You can do it at home/everywhere. For now, 2 things to do :) Can you download this app, so you can work and earn</div>
-        <img class = 'messages' id = 'Q4M4' src="\5 scammydownload.jpg" alt="Android APK download">
+        <div class='messages' id='Q4M1'> </div>
+        <div class='messages' id='Q4M2'>thanks you for sharing, sure I will note that down</div>
+        <div class='messages' id='Q4M3'>this J.0.B vacancy is special. You can do it at home/everywhere. For now, 2
+          things to do :) Can you download this app, so you can work and earn</div>
+        <img class='messages' id='Q4M4' src="\5 scammydownload.jpg" alt="Android APK download">
 
-        <div class = 'messages' id = 'Q5M1'>   </div>
-        <div class = 'messages' id = 'Q5M2'>When you downloaded, can reply YES</div>
-        <div class = 'messages' id = 'Q5M3'>PIC will call you now to share more</div>
+        <div class='messages' id='Q5M1'> </div>
+        <div class='messages' id='Q5M2'>When you downloaded, can reply YES</div>
+        <div class='messages' id='Q5M3'>PIC will call you now to share more</div>
 
-        <img class='base' id = 'phonefunc' src="\3 chatfuncs.jpg" alt="Telegram chat">
-        <div  class='base' id = 'phonefuncbase'></div>
-
-
-
-
-<!--         <div class='speaker' id='chatbody'></div>
- -->       
-
-
-        <!-- <div class='phoneContent'></div> -->
-
-        <!--app banner n contact [fixed]-->
-        <!--text area left btm------------>
-        <!--text area right btm----------->
-        <!--app text area [fixed]--------->
-        <!--Maybe grid 100px top btm, then fr the rest--------->
+        <img class='base' id='phonefunc' src="\3 chatfuncs.jpg" alt="Telegram chat">
+        <div class='base' id='phonefuncbase'></div>
       </div>
 
     </div>
 
-  <div class = 'end_Screen'> 
-    <h1 class = 'end_title'>Congratulations</h1>
-    <!-- <img id = 'imgCongratsShield' src="ultshield.png" alt="a shield defending heart from cyberthreats">-->
-    <img class = 'endpics' id = 'endStateWin' src='\6_Endstate_congrats.png' alt='Imaginary scammer unhappy'>
-    <img class = 'endpics' id = 'endStateMed' src='\7_Endstate_decentjob.png' alt='Imaginary scammer pensive'>
-    <img class = 'endpics' id = 'endStateLose' src='\8_Endstate_evilprevails.png' alt='Imaginary scammer happy'>
+    <div class='end_Screen'>
+      <h1 class='end_title'>Congratulations</h1>
+      <!-- <img id = 'imgCongratsShield' src="ultshield.png" alt="a shield defending heart from cyberthreats">-->
+      <img class='endpics' id='endStateWin' src='\6_Endstate_congrats.png' alt='Imaginary scammer unhappy'>
+      <img class='endpics' id='endStateMed' src='\7_Endstate_decentjob.png' alt='Imaginary scammer pensive'>
+      <img class='endpics' id='endStateLose' src='\8_Endstate_evilprevails.png' alt='Imaginary scammer happy'>
 
-    <p id = 'pointsNthanks'>Placeholder: You scored . </p>
-    <button class='buttons' id = 'replayButton'>Replay?</button>
-  </div>  
+      <p id='pointsNthanks'>Placeholder: You scored . </p>
+      <button class='buttons' id='replayButton'>Replay?</button>
+    </div>
 
-
-
-  <script type="module" src="/main.js"></script>
+    <script type="module" src="/main.js"></script>
 </body>
 
 </html>
