@@ -13,7 +13,7 @@ import { game } from "./game";  */
 let startScore = 10;
 let playerScore = startScore; 
 
-let allowedTime = 10; 
+let allowedTime = 5; 
 
  /*----- cached elements  -----*/
  console.log('testing12345');
@@ -39,6 +39,10 @@ const Q1A1 = document.getElementById('Q1A1');
 const Q1A2 = document.getElementById('Q1A2');
 const Q1A3 = document.getElementById('Q1A3');
 const nextButtonQ12 = document.getElementById('nextButtonQ12');
+
+const Q1M1 = document.getElementById('Q1M1');
+const Q1M2 = document.getElementById('Q1M2');
+const Q1M3 = document.getElementById('Q1M3');
 
 const q2a1Button = document.getElementById('Q2A1');
 const q2a2Button = document.getElementById('Q2A2');
@@ -82,7 +86,7 @@ const pointsNthanks = document.getElementById('pointsNthanks');
 const replayButton = document.getElementById('replayButton');
 
 const secondsLeft = document.querySelector('.timer_sec');
-
+const quoteButtons = document.getElementsByClassName('quote');
 
 console.log(introBox);
 console.log(diffNameBox);
@@ -117,11 +121,31 @@ const nextPage23 = () => {
     Q1A3.style.display = 'block';
     nextButtonQ12.style.display = 'block';
 
+    Q1M1.style.display = 'block';
+    Q1M2.style.display = 'block';
+    Q1M3.style.display = 'block';
+
+    Q2M1.style.display = 'none';
+    Q2M2.style.display = 'none';
+    Q2M3.style.display = 'none';
+
+    Q3M1.style.display = 'none';
+    Q3M2.style.display = 'none';
+    Q3M3.style.display = 'none';
+
+    Q4M1.style.display = 'none';
+    Q4M2.style.display = 'none';
+    Q4M3.style.display = 'none';
+    Q4M4.style.display = 'none';
+
     Q5.style.display = 'none';
     Q5A1.style.display = 'none';
     Q5A2.style.display = 'none';
     Q5A3.style.display = 'none';
     nextButtonQ5end.style.display = 'none';
+    Q5M1.style.display = 'none';
+    Q5M2.style.display = 'none';
+    Q5M3.style.display = 'none';
 
     activateTimer(allowedTime);
 
@@ -143,12 +167,37 @@ const nextPage34 = (event) => {
     nextButtonQ12.style.display = 'none';
     console.log('Q1 off');
 
+    Q1M1.style.display = 'none';
+    Q1M2.style.display = 'none';
+    Q1M3.style.display = 'none';
+
+    Q3M1.style.display = 'none';
+    Q3M2.style.display = 'none';
+    Q3M3.style.display = 'none';
+
+    Q4M1.style.display = 'none';
+    Q4M2.style.display = 'none';
+    Q4M3.style.display = 'none';
+    Q4M4.style.display = 'none';
+
+    Q5M1.style.display = 'none';
+    Q5M2.style.display = 'none';
+    Q5M3.style.display = 'none';
+    
     Q2.style.display = 'block';
     Q2A1.style.display = 'block';
     Q2A2.style.display = 'block';
     Q2A3.style.display = 'block';
     nextButtonQ23.style.display = 'block';
+    for (let i=0; i<quoteButtons.length; i++) {
+        console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);
+        quoteButtons[i].disabled = false; 
+        console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`); }
     console.log('Q2 on');
+
+    Q2M1.style.display = 'block';
+    Q2M2.style.display = 'block';
+    Q2M3.style.display = 'block';
 
     activateTimer(allowedTime);
 }  
@@ -168,12 +217,40 @@ const nextPage45 = (event) => {
     nextButtonQ23.style.display = 'none';
     console.log('Q2 off');
 
+    Q2M1.style.display = 'none';
+    Q2M2.style.display = 'none';
+    Q2M3.style.display = 'none';
+
+    Q1M1.style.display = 'none';
+    Q1M2.style.display = 'none';
+    Q1M3.style.display = 'none';
+
+    Q4M1.style.display = 'none';
+    Q4M2.style.display = 'none';
+    Q4M3.style.display = 'none';
+    Q4M4.style.display = 'none';
+
+    Q5M1.style.display = 'none';
+    Q5M2.style.display = 'none';
+    Q5M3.style.display = 'none';
+
     Q3.style.display = 'block';
     Q3A1.style.display = 'block';
     Q3A2.style.display = 'block';
     Q3A3.style.display = 'block';
+
+   
     nextButtonQ34.style.display = 'block';
+    for (let i=0; i<quoteButtons.length; i++) {
+        console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);
+        quoteButtons[i].disabled = false; 
+        console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);
+    }
     console.log('Q3 on');
+
+    Q3M1.style.display = 'block';
+    Q3M2.style.display = 'block';
+    Q3M3.style.display = 'block';
 
     activateTimer(allowedTime);
 }
@@ -193,12 +270,38 @@ const nextPage56 = (event) => {
     nextButtonQ34.style.display = 'none';
     console.log('Q3 off');
 
+    Q3M1.style.display = 'none';
+    Q3M2.style.display = 'none';
+    Q3M3.style.display = 'none';
+
+    Q1M1.style.display = 'none';
+    Q1M2.style.display = 'none';
+    Q1M3.style.display = 'none';
+
+    Q2M1.style.display = 'none';
+    Q2M2.style.display = 'none';
+    Q2M3.style.display = 'none';
+
+    Q5M1.style.display = 'none';
+    Q5M2.style.display = 'none';
+    Q5M3.style.display = 'none';
+
     Q4.style.display = 'block';
     Q4A1.style.display = 'block';
     Q4A2.style.display = 'block';
     Q4A3.style.display = 'block';
     nextButtonQ45.style.display = 'block';
+    for (let i=0; i<quoteButtons.length; i++) {
+        console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);
+        quoteButtons[i].disabled = false; 
+        console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);
+    }
     console.log('Q4 on');
+
+    Q4M1.style.display = 'block';
+    Q4M2.style.display = 'block';
+    Q4M3.style.display = 'block';
+    Q4M4.style.display = 'block';
 
     activateTimer(allowedTime);
 }
@@ -218,12 +321,26 @@ const nextPage67 = (event) => {
     nextButtonQ45.style.display = 'none';
     console.log('Q4 off');
 
+    Q4M1.style.display = 'none';
+    Q4M2.style.display = 'none';
+    Q4M3.style.display = 'none';
+    Q4M4.style.display = 'none';
+
     Q5.style.display = 'block';
     Q5A1.style.display = 'block';
     Q5A2.style.display = 'block';
     Q5A3.style.display = 'block';
     nextButtonQ5end.style.display = 'block';
+    for (let i=0; i<quoteButtons.length; i++) {
+        console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);
+        quoteButtons[i].disabled = false; 
+        console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);
+    }
     console.log('Q5 on');
+
+    Q5M1.style.display = 'block';
+    Q5M2.style.display = 'block';
+    Q5M3.style.display = 'block';
 
     activateTimer(allowedTime);
 }
@@ -242,21 +359,29 @@ replayButton.addEventListener('click', backToStart);
  //difficulty function          N/A
  //page move functions          DONE, ABOVE
  //game scoring function        DONE
+ //countdown-points mechanism   DONE
  //restart function             DONE
  //show final score function    DONE
 
+
+
  //timer function               WIP 
- //overall main function        
+ //overall main function        N/A
 
 // game scoring functions (part 1)
 function countPoint(q,x) {
     console.log(`LOG: PLAYER SCORE IS NOW ${playerScore}`); 
-    return () => countingSquire(q,x);
+        return () => countingSquire(q,x);
 }
 
 function countingSquire(q, x) {
+    for (let i=0; i<quoteButtons.length; i++) {
+        console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);
+        quoteButtons[i].disabled = true; 
+        console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`); }
 
     if (q === 1) {
+
         console.log('This is Q1');
         if (x === 1) {
             aWrongOption(x);
@@ -327,6 +452,9 @@ function aGreatOption(x) {
     playerScore += 2;
     console.log(`option is ${x}, a great option. SQUIRE adds playerscore by 2: ${playerScore}`);
     console.log('this is the aGreatOption speaking');
+    // wondering....how to deal with the edge case
+    
+    // wondering....how to deal with the edge case
 } 
 
 function aGoodOption(x) {
@@ -358,23 +486,41 @@ function aVeryWrongOption(x) {
 function activateTimer(time) {
     secondsLeft.innerText = `${allowedTime}`;
     let clock = setInterval(countDown, 1000);
-  
 
     function countDown() {
         if (time > 0) {
             secondsLeft.innerText = `${time}`;
             console.log(`time left: ${time}`);
             time -= 1;} 
-            
+/*             else if ( ) {
+            clearInterval(clock);
+            } */
             else if (time === 0) {
             secondsLeft.innerText = `${time}`;
             console.log('time is up ');
+
+            const buttons = document.getElementsByClassName('quote');
+            for (let i=0; i<buttons.length; i++) {
+                buttons[i].disabled= true;
+            }
+
+            /* console.log(`Score initially was: ${playerScore}`);
+            playerScore -= 1; 
+            console.log(`Score now is: ${playerScore}`); */
+            //WRITE THIS TOMORROW- HOW TO MINUS, WHILE NOT MINUSING IF ONE PICKS BEFORE TIME ENDS
+
             clearInterval(clock);
         }
     }
     //hypothesis for page to move: return sth, then if received, eventlisten next page
     //or if event listen timer class value 0, move page. 
+    
+} 
+
+function resetOptionButtons() {
+    //try to substitute
 }
+
 
 //show final score function    
 function moveToEndScreen() {
@@ -408,6 +554,11 @@ function backToStart() {
     introBox.style.display = 'block';
     console.log(`ending the game, score is ${playerScore}`);
     playerScore = startScore;
+    for (let i=0; i<quoteButtons.length; i++) {
+        console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);
+        quoteButtons[i].disabled = false; 
+        console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);
+    }
     console.log(`restarting the game, score is ${playerScore}`);
 }
 
