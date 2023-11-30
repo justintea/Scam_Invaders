@@ -55,10 +55,10 @@
 
     <button id='name_button'>Submit</button>
     <br><br>
-    <div class='sub_title'>Select your difficulty</div>
-    <button disabled class='diff_button' id='easyButton'>Easy</button>
-    <button class='diff_button' id='medButton'>Medium</button>
-    <button disabled class='diff_button' id='hardButton'>Hard</button>
+    <div class='sub_title'>Select your poison</div>
+    <button disabled class='diff_button' id='easyButton'>e-Commerce scam</button>
+    <button class='diff_button' id='medButton'>Job scam</button>
+    <button disabled class='diff_button' id='hardButton'>Love scam</button>
 
 
     <!-- Start game button -->
@@ -83,7 +83,7 @@
       <section>
         <!-- question 1 -->
         <div class='question' id='Q1'>Question 1: Choose your response:</div>
-        <div class='option' id='Q1A1'>1. Provide your real name: <button class="quote">Hi, I am Peter Pek.</button>
+        <div class='option' id='Q1A1'>1. Provide your real name: <button class="quote" id = 'quoteName'>Hi, I am Peter Pek.</button>
         </div>
         <div class='option' id='Q1A2'>2. Provide a nickname or ficticious name instead: <button class="quote">Hi, I am Gandalf
             Bai.</button>
@@ -174,12 +174,12 @@
 
         <div class = 'messages' id = 'Q3M1'>   </div>
         <div class = 'messages' id = 'Q3M2'>thank you, my PIC will share job details and about salary with you by this week. Our SG companies are preparing many new positions, so can I ask what is your age?</div>
-        <img id = 'Q3M3' src="\4 scammypic.JPG" alt="Scam advertisement">
+        <img class = 'messages' id = 'Q3M3' src="\4 scammypic.JPG" alt="Scam advertisement">
 
         <div class = 'messages' id = 'Q4M1'>   </div>
         <div class = 'messages' id = 'Q4M2'>thanks you for sharing, sure I will note that down</div>
         <div class = 'messages' id = 'Q4M3'>this J.0.B vacancy is special. You can do it at home/everywhere. For now, 2 things to do :) Can you download this app, so you can work and earn</div>
-        <img id = 'Q4M4' src="\5 scammydownload.jpg" alt="Android APK download">
+        <img class = 'messages' id = 'Q4M4' src="\5 scammydownload.jpg" alt="Android APK download">
 
         <div class = 'messages' id = 'Q5M1'>   </div>
         <div class = 'messages' id = 'Q5M2'>When you downloaded, can reply YES</div>
@@ -208,7 +208,11 @@
 
   <div class = 'end_Screen'> 
     <h1 class = 'end_title'>Congratulations</h1>
-    <img id = 'imgCongratsShield' src="ultshield.png" alt="a shield defending heart from cyberthreats">
+    <!-- <img id = 'imgCongratsShield' src="ultshield.png" alt="a shield defending heart from cyberthreats">-->
+    <img class = 'endpics' id = 'endStateWin' src='\6_Endstate_congrats.png' alt='Imaginary scammer unhappy'>
+    <img class = 'endpics' id = 'endStateMed' src='\7_Endstate_decentjob.png' alt='Imaginary scammer pensive'>
+    <img class = 'endpics' id = 'endStateLose' src='\8_Endstate_evilprevails.png' alt='Imaginary scammer happy'>
+
     <p id = 'pointsNthanks'>Placeholder: You scored . </p>
     <button class='buttons' id = 'replayButton'>Replay?</button>
   </div>  

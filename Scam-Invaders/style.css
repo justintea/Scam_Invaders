@@ -92,11 +92,17 @@ span {
     transform: translate(-50%, -50%);
 }
 
+#playerField {
+    height: 38px;
+    padding: 3px;
+    padding-left: 7px;
+}
+
 .diff_button {
     margin: 15px 20px 20px 0;
     border-radius: 6px;
     height: 40px;
-    width: 100px;
+    width: 160px;
     font-weight: 500;
 }
 
@@ -127,6 +133,9 @@ span {
     font-weight: 500;
 }
 
+#name_button:focus {
+    background-color: grey;
+}
 #startButton {
     display: block;
     position: relative;
@@ -232,6 +241,11 @@ span {
 cursor: not-allowed;
  }
 
+ #quoteNameSpecialQ{
+ display: none;
+
+ }
+
 /*--------------------- (3) -------------------*/
 .game_box .footer {
     height: 80px;
@@ -244,9 +258,6 @@ cursor: not-allowed;
 
 #nextButtonQ12 {
     display: block;
-    position: relative;
-    top: 80px;
-    left: 460px;
     height: 40px;
     width: 170px;
     border-radius: 6px;
@@ -255,62 +266,63 @@ cursor: not-allowed;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    position: relative;
+    top: 100%;
+    left: 74%;
 }
 
 #nextButtonQ23 {
-    position: relative;
-    top: 33px;
-    left: 460px;
     height: 40px;
     width: 170px;
     border-radius: 6px;
     background-color: rgb(202, 201, 201);
     font-weight: bold;
     display: none;
+
+    position: relative;
+    top: 10%;
+    left: 74%;
 }
 
 #nextButtonQ34 {
-    position: relative;
-    top: 80px;
-    left: 460px;
     height: 40px;
     width: 170px;
     border-radius: 6px;
     background-color: rgb(202, 201, 201);
     font-weight: bold;
     display: none;
+
+    position: relative;
+    top: 100%;
+    left: 74%;
 }
 
 #nextButtonQ45 {
-    position: relative;
-    top: 7px;
-    left: 462px; 
-   
     height: 40px;
     width: 170px;
     border-radius: 6px;
     background-color: rgb(202, 201, 201);
     font-weight: bold;
     display: none;
+
+    position: relative;
+    top: 10%;
+    left: 74%;
 }
 
 #nextButtonQ5end {
-    position: relative;
-    top: 55px;
-    left: 460px;
     height: 40px;
     width: 170px;
     border-radius: 6px;
     background-color: rgb(202, 201, 201);
     font-weight: bold;
     display: none;
-}
 
-/* .game_box .question_end #submitButton {    
-        margin: 0 0 0px 0px;
-        border: 1px solid;
-        width: 150px;
-    } */
+    position: relative;
+    top: 70%;
+    left: 74%;
+}
 
 #Q1,
 #Q1A1,
@@ -350,7 +362,6 @@ cursor: not-allowed;
 
 /*--------------------- (4) -------------------*/
 .game_screen .smartphone {
-
     display: none;
     width: 360px;
     height: 640px;
@@ -392,7 +403,6 @@ cursor: not-allowed;
     position: relative;
     top: -15%;
     left: 35%;
-    
 }
 
 #displayName {
@@ -407,11 +417,11 @@ cursor: not-allowed;
 }
 
 #phoneProfilePic {
-width: 17%;
+    width: 17%;
 
-position: relative;
-top: -20.5%;
-left: 80%;
+    position: relative;
+    top: -20.5%;
+    left: 80%;
 }
 
 #phoneBG {
@@ -431,19 +441,21 @@ left: 80%;
     width: fit-content;
 }
 
-#Q1M1 { 
-position: relative;
-top: -95%; 
+#Q1M1 {
+    position: relative;
+    top: -95%;
 }
 
 #Q1M2 {
     position: relative;
     top: -94%;
-    width: 285px; /* for long text */
+    width: 285px;
+    /* for long text */
 }
 
-#Q1M3 {position: relative;
-    top: -93%; 
+#Q1M3 {
+    position: relative;
+    top: -93%;
 }
 
 #Q2M1 {
@@ -463,139 +475,136 @@ top: -95%;
 }
 
 #Q2M2 {
-display: none;
-position: relative;
-top: -97%;
+    display: none;
+    position: relative;
+    top: -97%;
 }
-    
+
 #Q2M3 {
-display: none;
-position: relative;
-top: -96%;
+    display: none;
+    position: relative;
+    top: -96%;
 }
 
 #Q3M1 {
-display: none;
-width: 150px;
-margin-right: 10px;
-margin-top: 0px;
-border-top-left-radius: 0px;
-border-top-right-radius: 0px;
-background-color: #DCF8C6;
+    display: none;
+    width: 150px;
+    margin-right: 10px;
+    margin-top: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    background-color: #DCF8C6;
 
-position: relative;
-top: -97.8%;
-height: 2px;
-left: 50%;
+    position: relative;
+    top: -97.8%;
+    height: 2px;
+    left: 50%;
 }
 
 #Q3M2 {
-display: none;
-width: 285px;
-position: relative;
-top: -97%;
+    display: none;
+    width: 285px;
+    position: relative;
+    top: -97%;
 }
 
 #Q3M3 {
-display: none;
-width: 50%;
-margin-left: 10px;
-border-radius: 10px;
+    display: none;
+    width: 50%;
+    margin-left: 10px;
+    border-radius: 10px;
 
-position: relative;
-top: -96%;
+    position: relative;
+    top: -96%;
 }
 
 #Q4M1 {
-display: none;
-width: 150px;
-margin-right: 10px;
-margin-top: 0px;
-border-top-left-radius: 0px;
-border-top-right-radius: 0px;
-background-color: #DCF8C6;
+    display: none;
+    width: 150px;
+    margin-right: 10px;
+    margin-top: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    background-color: #DCF8C6;
 
-position: relative;
-top: -97.8%;
-height: 2px;
-left: 50%;
+    position: relative;
+    top: -97.8%;
+    height: 2px;
+    left: 50%;
 }
-    
+
 #Q4M2 {
-display: none;
+    display: none;
 
-position: relative;
-top: -97%;
+    position: relative;
+    top: -97%;
 }
-    
-#Q4M3 {
-display: none;
 
-position: relative;
-top: -96%;
+#Q4M3 {
+    display: none;
+
+    position: relative;
+    top: -96%;
 }
 
 #Q4M4 {
-display: none;
-width: 50%;
-margin-left: 10px;
-border-radius: 10px;
+    display: none;
+    width: 50%;
+    margin-left: 10px;
+    border-radius: 10px;
 
-position: relative;
-top: -96%;
+    position: relative;
+    top: -96%;
 }
-
 #Q5M1 {
-display: none;
-width: 150px;
-margin-right: 10px;
-margin-top: 0px;
-border-top-left-radius: 0px;
-border-top-right-radius: 0px;
-background-color: #DCF8C6;
+    display: none;
+    width: 150px;
+    margin-right: 10px;
+    margin-top: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    background-color: #DCF8C6;
 
-position: relative;
-top: -97.8%;
-height: 2px;
-left: 50%;
+    position: relative;
+    top: -97.8%;
+    height: 2px;
+    left: 50%;
 }
-        
+
 #Q5M2 {
-display: none;
+    display: none;
 
-position: relative;
-top: -97%;
+    position: relative;
+    top: -97%;
 }
-        
-#Q5M3 {
-display: none;
 
-position: relative;
-top: -96%;
+#Q5M3 {
+    display: none;
+
+    position: relative;
+    top: -96%;
 }
 
 #phonefunc {
-width: 100%;
+    width: 100%;
 
-position: absolute;
-top: 89%;
+    position: absolute;
+    top: 89%;
 }
 
- #phonefuncbase {
+#phonefuncbase {
     width: 340px;
     height: 36px;
     background-color: #E3EDE4;
     border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px; 
+    border-bottom-right-radius: 40px;
 
     position: absolute;
     top: 94%;
- }
-
+}
 
 /*------------------- End Game screen -----------------*/
 .end_Screen {
-
     background-color: white;
     width: 600px;
     height: 425px;
@@ -620,18 +629,56 @@ top: 89%;
 #imgCongratsShield {
     margin: 15px 0 0 0;
     width: 25%;
-    position: relative;
-    left: 210px;
-    }
 
-#pointsNthanks{
-text-align: center;
-margin: 20px;
+    position: relative;
+    left: 37%;
+}
+
+.endPics {
+display: none;
+}
+
+#endStateWin{
+display: none;
+margin: 15px 0 0 0;
+width: 45%;
+
+position: relative;
+left: 27%;
+}
+
+#endStateMed{
+display: none;
+margin: 15px 0 0 0;
+width: 45%;
+
+position: relative;
+left: 27%;
+}
+
+#endStateLose{
+display: none;
+margin: 15px 0 0 0;
+width: 45%;
+
+position: relative;
+left: 27%;
+
+}
+
+#pointsNthanks {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    width: 350px;
+
+    position: relative;
+    left: 20%;
 }
 
 #replayButton {
-width: 120px;
-position: relative;
-top: 0% ;
-left: 225px;
+    width: 120px;
+    position: relative;
+    top: 0%;
+    left: 40%;
 }

@@ -13,8 +13,6 @@ const contButton1 = document.getElementById('contButton1');
 console.log(contButton1);
 const introBox = document.querySelector('.intro_box');
 const diffNameBox = document.querySelector('.diff_name_box');
-/* const difficulty = document.querySelector(diffCallback);*/
-/*const name submit button */
 let playerName ='';
 const nameSubmitButton = document.getElementById('name_button');
 
@@ -31,6 +29,7 @@ const Q1A1 = document.getElementById('Q1A1');
 const Q1A2 = document.getElementById('Q1A2');
 const Q1A3 = document.getElementById('Q1A3');
 const nextButtonQ12 = document.getElementById('nextButtonQ12');
+const quoteNameSpecialQ = document.getElementById('quoteName');
 
 const Q1M1 = document.getElementById('Q1M1');
 const Q1M2 = document.getElementById('Q1M2');
@@ -83,6 +82,10 @@ const quoteButtons = document.getElementsByClassName('quote');
 const questionClass = document.getElementsByClassName('question');
 const optionClass = document.getElementsByClassName('option');
 const messagesClass = document.getElementsByClassName('messages');
+const endPics = document.getElementsByClassName('endpics');
+const endWin = document.getElementById('endStateWin');
+const endMed = document.getElementById('endStateMed');
+const endLose = document.getElementById('endStateLose');
 
 /*----- Event listeners and Render functions -----*/
 
@@ -113,6 +116,8 @@ const nextPage23 = () => {
     Q1A2.style.display = 'block';
     Q1A3.style.display = 'block';
     nextButtonQ12.style.display = 'block';
+    //special just for this option!
+    if (playerName !='' ) {quoteNameSpecialQ.innerText = `Hi, I am ${playerName}.`;}
 
     Q1M1.style.display = 'block';
     Q1M2.style.display = 'block';
@@ -148,7 +153,6 @@ const nextPage34 = (event) => {
 
     activateTimer(allowedTime);
     resetOptionButtons();
-
 }
 
 nextButtonQ12.addEventListener('click', nextPage34);
@@ -241,21 +245,24 @@ nextButtonQ5end.addEventListener('click', moveToEndScreen);
 replayButton.addEventListener('click', backToStart);
 
 /*----- functions -----*/
-
-//difficulty function          N/A
-//input function               DONE
+//*P1
 //page move functions          DONE    ABOVE
 //game scoring function        DONE    CONSOLIDATED
-//countdown-points mechanism   DONE
-//restart function             DONE
 //show final score function    DONE
+//restart function             DONE
 
+//*P2
+//difficulty/variety function  N/A
 //timer function               DONE    
-//call & return name function  DONE
 //option reset function        DONE    CONSOLIDATED
-//optimize pg display function DONE 
+//optimize pg display function DONE    CONSOLIDATED
 //overall main function        N/A
 
+//*P3
+//input & return name function DONE
+//name-to-other use functions  DONE
+
+//* Future
 //Question & option load-in    ICE                 
 //Messages load-in             ICE
 
@@ -368,8 +375,60 @@ function aVeryWrongOption(x) {
     console.log('this is the aVeryWrongOption speaking');
 }
 
-//timer function
 
+//show final score function    
+function moveToEndScreen() {
+    console.log('Moving to the last screen');
+    console.log(pointsNthanks);
+
+    if (playerScore > 11) {
+        endTitle.innerText = 'Congratulations!';
+        endPicsReset();
+        endWin.style.display = 'block';
+        pointsNthanks.innerText = `${playerName}, you successfully defended against a scammer, evading their best tricks!`;
+        pointsNthanks.innerHTML += '<br/>';
+        pointsNthanks.innerHTML += `<strong>Your score: ${playerScore} out of 15</strong>`;
+    } else if (playerScore > 8 && playerScore < 12) {
+        endTitle.innerText = 'Decent effort!';
+        endPicsReset();
+        endMed.style.display = 'block';
+        pointsNthanks.innerText = `${playerName}, you sensed something is amiss...and resisted some scammy moves!`;
+        pointsNthanks.innerHTML += '<br/>';
+        pointsNthanks.innerHTML += `<strong>Your score: ${playerScore} out of 15</strong>`;
+    } else {
+        endTitle.innerText = 'Oh no, try again!';
+        endPicsReset();
+        endLose.style.display = 'block';
+        pointsNthanks.innerText = `${playerName}, you fell for the scam and gave important personal information away...`;
+        pointsNthanks.innerHTML += '<br/>';
+        pointsNthanks.innerHTML += `<strong>Your score: ${playerScore} out of 15</strong>`;
+    }
+
+    gameBox.style.display = 'none';
+    endScreen.style.display = 'block';
+}
+
+//restart function             
+function backToStart() {
+    endScreen.style.display = 'none';
+    introBox.style.display = 'block';
+    console.log(`ending the game, score is ${playerScore}`);
+    playerScore = startScore;
+    for (let i = 0; i < quoteButtons.length; i++) {
+        console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);
+        quoteButtons[i].disabled = false;
+        console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);
+    }
+    console.log(`restarting the game, score is ${playerScore}`);
+}
+
+//*P2
+//input & return name function 
+function recordName() {
+    playerName = document.getElementById('playerField').value;
+    }
+
+//timer function
 function activateTimer(time) {
     secondsLeft.innerText = `${allowedTime}`;
     let clock = setInterval(countDown, 1000);
@@ -396,6 +455,7 @@ function activateTimer(time) {
     }
 }
 
+//option reset function 
 function resetOptionButtons() {
     for (let i = 0; i < quoteButtons.length; i++) {
 /*         console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);*/
@@ -403,42 +463,10 @@ function resetOptionButtons() {
 /*         console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);*/    }
 }
 
-//show final score function    
-function moveToEndScreen() {
-    console.log('Moving to the last screen');
-    console.log(pointsNthanks);
-
-    if (playerScore > 12) {
-        endTitle.innerText = 'Congratulations!';
-        pointsNthanks.innerText = `${playerName}, you successfully defended against a scammer, evading their best tricks!`;
-        pointsNthanks.innerHTML += '<br/>';
-        pointsNthanks.innerHTML += `<strong>Your score: ${playerScore} out of 15</strong>`;
-    } else if (playerScore > 8 && playerScore < 12) {
-        endTitle.innerText = 'Decent effort!';
-        pointsNthanks.innerText = `${playerName}, you sensed something is amiss...and resisted some scammy moves!`;
-        pointsNthanks.innerHTML += '<br/>';
-        pointsNthanks.innerHTML += `<strong>Your score: ${playerScore} out of 15</strong>`;
-    } else {
-        endTitle.innerText = 'Oh no, try again!';
-        pointsNthanks.innerText = `${playerName}, you fell for the scam and gave important personal information away...`;
-        pointsNthanks.innerHTML += '<br/>';
-        pointsNthanks.innerHTML += `<strong>Your score: ${playerScore} out of 15</strong>`;
-    }
-
-    gameBox.style.display = 'none';
-    endScreen.style.display = 'block';
-}
-
-//call & return name function
-function recordName() {
-playerName = document.getElementById('playerField').value;
-}
-
 //optimize pg display function  
 function QnOptnMsgReset() {
     for (let i = 0; i < questionClass.length; i++) {
         questionClass[i].style.display = 'none';
-
     }
 
     for (let i = 0; i < optionClass.length; i++) {
@@ -450,20 +478,11 @@ function QnOptnMsgReset() {
     }
 }
 
-//restart function             
-function backToStart() {
-    endScreen.style.display = 'none';
-    introBox.style.display = 'block';
-    console.log(`ending the game, score is ${playerScore}`);
-    playerScore = startScore;
-    for (let i = 0; i < quoteButtons.length; i++) {
-        console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);
-        quoteButtons[i].disabled = false;
-        console.log(`button id ${i} is now disabled: ${quoteButtons[i].disabled}`);
+function endPicsReset() {
+    for (let i = 0; i < endPics.length; i++) {
+        endPics[i].style.display = 'none';
     }
-    console.log(`restarting the game, score is ${playerScore}`);
 }
-
 
 /*----- questions -----*/
 // an array of object questions.
