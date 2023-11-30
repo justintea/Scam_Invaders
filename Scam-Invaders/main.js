@@ -5,7 +5,7 @@
 let startScore = 8;
 let playerScore = startScore;
 
-let allowedTime = 5;
+let allowedTime = 3;
 
 /*----- cached elements  -----*/
 
@@ -105,7 +105,9 @@ const nextPage23 = () => {
     gameBox.style.display = 'block';
 
     // Display = None consolidator function here
-
+    QnOptnMsgReset();
+    nextButtonQ5end.style.display = 'none';
+ 
     Q1.style.display = 'block';
     Q1A1.style.display = 'block';
     Q1A2.style.display = 'block';
@@ -115,28 +117,6 @@ const nextPage23 = () => {
     Q1M1.style.display = 'block';
     Q1M2.style.display = 'block';
     Q1M3.style.display = 'block';
-
-    Q2M1.style.display = 'none';
-    Q2M2.style.display = 'none';
-    Q2M3.style.display = 'none';
-
-    Q3M1.style.display = 'none';
-    Q3M2.style.display = 'none';
-    Q3M3.style.display = 'none';
-
-    Q4M1.style.display = 'none';
-    Q4M2.style.display = 'none';
-    Q4M3.style.display = 'none';
-    Q4M4.style.display = 'none';
-
-    Q5.style.display = 'none';
-    Q5A1.style.display = 'none';
-    Q5A2.style.display = 'none';
-    Q5A3.style.display = 'none';
-    nextButtonQ5end.style.display = 'none';
-    Q5M1.style.display = 'none';
-    Q5M2.style.display = 'none';
-    Q5M3.style.display = 'none';
 
     activateTimer(allowedTime);
 
@@ -151,41 +131,20 @@ q1a3Button.addEventListener('click', countPoint(1, 3));
 
 //page 3 to page 4, game question 2====================================
 const nextPage34 = (event) => {
-  Q1.style.display = 'none';
-    Q1A1.style.display = 'none';
-    Q1A2.style.display = 'none';
-    Q1A3.style.display = 'none';
+ 
+    QnOptnMsgReset(); 
     nextButtonQ12.style.display = 'none';
-    
-console.log('Q1 off');
-
- Q1M1.style.display = 'none';
-    Q1M2.style.display = 'none';
-    Q1M3.style.display = 'none';
-
-    Q3M1.style.display = 'none';
-    Q3M2.style.display = 'none';
-    Q3M3.style.display = 'none';
-
-    Q4M1.style.display = 'none';
-    Q4M2.style.display = 'none';
-    Q4M3.style.display = 'none';
-    Q4M4.style.display = 'none';
-
-    Q5M1.style.display = 'none';
-    Q5M2.style.display = 'none';
-    Q5M3.style.display = 'none'; 
-
+    console.log('Q1 off');
+ 
     Q2.style.display = 'block';
     Q2A1.style.display = 'block';
     Q2A2.style.display = 'block';
     Q2A3.style.display = 'block';
     nextButtonQ23.style.display = 'block';
-    console.log('Q2 on');
-
     Q2M1.style.display = 'block';
     Q2M2.style.display = 'block';
     Q2M3.style.display = 'block';
+    console.log('Q2 on');
 
     activateTimer(allowedTime);
     resetOptionButtons();
@@ -200,46 +159,23 @@ q2a3Button.addEventListener('click', countPoint(2, 3));
 
 //page 4 to page 5, game question 3====================================
 const nextPage45 = (event) => {
-    Q2.style.display = 'none';
-    Q2A1.style.display = 'none';
-    Q2A2.style.display = 'none';
-    Q2A3.style.display = 'none';
+    
+    QnOptnMsgReset();
     nextButtonQ23.style.display = 'none';
     console.log('Q2 off');
-
-    Q2M1.style.display = 'none';
-    Q2M2.style.display = 'none';
-    Q2M3.style.display = 'none';
-
-    Q1M1.style.display = 'none';
-    Q1M2.style.display = 'none';
-    Q1M3.style.display = 'none';
-
-    Q4M1.style.display = 'none';
-    Q4M2.style.display = 'none';
-    Q4M3.style.display = 'none';
-    Q4M4.style.display = 'none';
-
-    Q5M1.style.display = 'none';
-    Q5M2.style.display = 'none';
-    Q5M3.style.display = 'none';
 
     Q3.style.display = 'block';
     Q3A1.style.display = 'block';
     Q3A2.style.display = 'block';
     Q3A3.style.display = 'block';
-
-
     nextButtonQ34.style.display = 'block';
-    resetOptionButtons();
-
-    console.log('Q3 on');
-
     Q3M1.style.display = 'block';
     Q3M2.style.display = 'block';
     Q3M3.style.display = 'block';
+    console.log('Q3 on');
 
     activateTimer(allowedTime);
+    resetOptionButtons();
 }
 
 nextButtonQ23.addEventListener('click', nextPage45);
@@ -250,40 +186,20 @@ q3a3Button.addEventListener('click', countPoint(3, 3));
 
 //page 5 to page 6, game question 4===================================
 const nextPage56 = (event) => {
-    Q3.style.display = 'none';
-    Q3A1.style.display = 'none';
-    Q3A2.style.display = 'none';
-    Q3A3.style.display = 'none';
+    QnOptnMsgReset();
     nextButtonQ34.style.display = 'none';
     console.log('Q3 off');
-
-    Q3M1.style.display = 'none';
-    Q3M2.style.display = 'none';
-    Q3M3.style.display = 'none';
-
-    Q1M1.style.display = 'none';
-    Q1M2.style.display = 'none';
-    Q1M3.style.display = 'none';
-
-    Q2M1.style.display = 'none';
-    Q2M2.style.display = 'none';
-    Q2M3.style.display = 'none';
-
-    Q5M1.style.display = 'none';
-    Q5M2.style.display = 'none';
-    Q5M3.style.display = 'none';
 
     Q4.style.display = 'block';
     Q4A1.style.display = 'block';
     Q4A2.style.display = 'block';
     Q4A3.style.display = 'block';
     nextButtonQ45.style.display = 'block';
-    console.log('Q4 on');
-
     Q4M1.style.display = 'block';
     Q4M2.style.display = 'block';
     Q4M3.style.display = 'block';
     Q4M4.style.display = 'block';
+    console.log('Q4 on');
 
     activateTimer(allowedTime);
     resetOptionButtons();
@@ -297,32 +213,22 @@ q4a3Button.addEventListener('click', countPoint(4, 3));
 
 //page 6 to page 7, end screen=========================================
 const nextPage67 = (event) => {
-    Q4.style.display = 'none';
-    Q4A1.style.display = 'none';
-    Q4A2.style.display = 'none';
-    Q4A3.style.display = 'none';
+    QnOptnMsgReset();
     nextButtonQ45.style.display = 'none';
     console.log('Q4 off');
-
-    Q4M1.style.display = 'none';
-    Q4M2.style.display = 'none';
-    Q4M3.style.display = 'none';
-    Q4M4.style.display = 'none';
 
     Q5.style.display = 'block';
     Q5A1.style.display = 'block';
     Q5A2.style.display = 'block';
     Q5A3.style.display = 'block';
     nextButtonQ5end.style.display = 'block';
-    console.log('Q5 on');
-
     Q5M1.style.display = 'block';
     Q5M2.style.display = 'block';
     Q5M3.style.display = 'block';
+    console.log('Q5 on');
 
     activateTimer(allowedTime);
     resetOptionButtons();
-
 }
 
 nextButtonQ45.addEventListener('click', nextPage67);
@@ -350,7 +256,7 @@ replayButton.addEventListener('click', backToStart);
 //optimize pg display function WIP 
 //overall main function        N/A
 
-//Question & option load-in    ICE
+//Question & option load-in    ICE                 
 //Messages load-in             ICE
 
 // game scoring functions (part 1)
@@ -528,18 +434,19 @@ function recordName() {
 playerName = document.getElementById('playerField').value;
 }
 
-//
+//optimize pg display function  
 function QnOptnMsgReset() {
     for (let i = 0; i < questionClass.length; i++) {
-        questionClass[i].style.display = 'none'
+        questionClass[i].style.display = 'none';
+
     }
 
     for (let i = 0; i < optionClass.length; i++) {
-        optionClass[i].style.display = 'none'
+        optionClass[i].style.display = 'none';
     }
 
     for (let i = 0; i < messagesClass.length; i++) {
-        messagesClass[i].style.display = 'none'
+        messagesClass[i].style.display = 'none';
     }
 }
 
