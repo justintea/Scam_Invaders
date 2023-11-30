@@ -13,7 +13,7 @@ import { game } from "./game";  */
 let startScore = 10;
 let playerScore = startScore; 
 
-let allowedTime = 5; 
+let allowedTime = 10; 
 
  /*----- cached elements  -----*/
  console.log('testing12345');
@@ -527,12 +527,12 @@ function moveToEndScreen() {
     console.log('Moving to the last screen');
     console.log(pointsNthanks);
 
-    if (playerScore > 6) {
+    if (playerScore > 12) {
         endTitle.innerText = 'Congratulations!';
         pointsNthanks.innerText = 'You successfully defended against a scammer, evading their best tricks!';
         pointsNthanks.innerHTML += '<br/>';
         pointsNthanks.innerHTML += `<strong>Your score: ${playerScore} out of 15</strong>`;
-    } else if (playerScore > 3 && playerScore < 6) {
+    } else if (playerScore > 7 && playerScore < 12) {
         endTitle.innerText = 'Decent effort!';
         pointsNthanks.innerText = 'You sensed something is amiss...and resisted some scammy moves!';
         pointsNthanks.innerHTML += '<br/>';
