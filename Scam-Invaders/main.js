@@ -5,7 +5,7 @@
 let startScore = 8;
 let playerScore = startScore;
 
-let allowedTime = 5;
+let allowedTime = 8;
 
 /*----- cached elements  -----*/
 
@@ -19,6 +19,7 @@ const nameSubmitButton = document.getElementById('name_button');
 const gameScreen = document.querySelector('.game_screen');
 const gameBox = document.querySelector('.game_box');
 const startButton = document.getElementById('startButton');
+const medButton = document.getElementById('medButton');
 const ansSubmitButton = document.querySelector('.submitButton');
 
 const q1a1Button = document.getElementById('Q1A1');
@@ -95,10 +96,14 @@ const nextPage12 = () => {
     console.log('introbox status: ', introBox.style.display);
     diffNameBox.style.display = 'block';
     console.log('namebox status: ', diffNameBox.style.display);
+
+    startButton.disabled = true;   //    nextButtonQ12 disabled first
+    nameSubmitButton.addEventListener('click',recordName);
+    // if (playerName != '') {nameSubmitButton.addEventListener('click', startButtonEnabled);}
+
 }
 
 contButton1.addEventListener('click', nextPage12);
-nameSubmitButton.addEventListener('click', recordName);
 
 //page 2 to page 3, Game start, question 1 ==================================
 const nextPage23 = () => {
@@ -115,7 +120,9 @@ const nextPage23 = () => {
     Q1A1.style.display = 'block';
     Q1A2.style.display = 'block';
     Q1A3.style.display = 'block';
-    nextButtonQ12.style.display = 'block';
+    nextButtonQ12.style.display = 'block';      // if no options were clicked, can't click nextButton
+    nextButtonQ12.disabled = true;
+
     //special just for this option!
     if (playerName !='' ) {quoteNameSpecialQ.innerText = `Hi, I am ${playerName}.`;}
 
@@ -124,10 +131,15 @@ const nextPage23 = () => {
     Q1M3.style.display = 'block';
 
     activateTimer(allowedTime);
+    Q1A1.addEventListener('click', deactivateTimer); //cliking on options need to make timer to 0 
+    Q1A2.addEventListener('click', deactivateTimer);
+    Q1A3.addEventListener('click', deactivateTimer);
+    Q1A1.addEventListener('click', enableNextButton);
+    Q1A2.addEventListener('click', enableNextButton);
+    Q1A3.addEventListener('click', enableNextButton);
 
     console.log('gamebox status: ', gameScreen.style.display);
 }
-
 startButton.addEventListener('click', nextPage23);
 
 q1a1Button.addEventListener('click', countPoint(1, 1));
@@ -146,16 +158,27 @@ const nextPage34 = (event) => {
     Q2A2.style.display = 'block';
     Q2A3.style.display = 'block';
     nextButtonQ23.style.display = 'block';
+    nextButtonQ23.disabled = true;
+
     Q2M1.style.display = 'block';
     Q2M2.style.display = 'block';
     Q2M3.style.display = 'block';
     console.log('Q2 on');
 
     activateTimer(allowedTime);
+    Q2A1.addEventListener('click', deactivateTimer);
+    Q2A2.addEventListener('click', deactivateTimer);
+    Q2A3.addEventListener('click', deactivateTimer);
+    Q2A1.addEventListener('click', enableNextButton);
+    Q2A2.addEventListener('click', enableNextButton);
+    Q2A3.addEventListener('click', enableNextButton);
+    
     resetOptionButtons();
+
 }
 
-nextButtonQ12.addEventListener('click', nextPage34);
+nextButtonQ12.addEventListener('click', nextPage34);        
+
 
 q2a1Button.addEventListener('click', countPoint(2, 1));
 q2a2Button.addEventListener('click', countPoint(2, 2));
@@ -173,12 +196,20 @@ const nextPage45 = (event) => {
     Q3A2.style.display = 'block';
     Q3A3.style.display = 'block';
     nextButtonQ34.style.display = 'block';
+    nextButtonQ34.disabled = true;
     Q3M1.style.display = 'block';
     Q3M2.style.display = 'block';
     Q3M3.style.display = 'block';
     console.log('Q3 on');
 
     activateTimer(allowedTime);
+    Q3A1.addEventListener('click', deactivateTimer);
+    Q3A2.addEventListener('click', deactivateTimer);
+    Q3A3.addEventListener('click', deactivateTimer);
+    Q3A1.addEventListener('click', enableNextButton);
+    Q3A2.addEventListener('click', enableNextButton);
+    Q3A3.addEventListener('click', enableNextButton);
+
     resetOptionButtons();
 }
 
@@ -199,6 +230,7 @@ const nextPage56 = (event) => {
     Q4A2.style.display = 'block';
     Q4A3.style.display = 'block';
     nextButtonQ45.style.display = 'block';
+    nextButtonQ45.disabled = true;
     Q4M1.style.display = 'block';
     Q4M2.style.display = 'block';
     Q4M3.style.display = 'block';
@@ -206,6 +238,12 @@ const nextPage56 = (event) => {
     console.log('Q4 on');
 
     activateTimer(allowedTime);
+    Q4A1.addEventListener('click', deactivateTimer);
+    Q4A2.addEventListener('click', deactivateTimer);
+    Q4A3.addEventListener('click', deactivateTimer);
+    Q4A1.addEventListener('click', enableNextButton);
+    Q4A2.addEventListener('click', enableNextButton);
+    Q4A3.addEventListener('click', enableNextButton);
     resetOptionButtons();
 }
 
@@ -226,12 +264,19 @@ const nextPage67 = (event) => {
     Q5A2.style.display = 'block';
     Q5A3.style.display = 'block';
     nextButtonQ5end.style.display = 'block';
+    nextButtonQ5end.disabled = true;
     Q5M1.style.display = 'block';
     Q5M2.style.display = 'block';
     Q5M3.style.display = 'block';
     console.log('Q5 on');
 
     activateTimer(allowedTime);
+    Q5A1.addEventListener('click', deactivateTimer);
+    Q5A2.addEventListener('click', deactivateTimer);
+    Q5A3.addEventListener('click', deactivateTimer);
+    Q5A1.addEventListener('click', enableNextButton);
+    Q5A2.addEventListener('click', enableNextButton);
+    Q5A3.addEventListener('click', enableNextButton);
     resetOptionButtons();
 }
 
@@ -424,17 +469,26 @@ function backToStart() {
 
 //*P2
 //input & return name function 
+// ensuring name input before game starts function
+
 function recordName() {
     playerName = document.getElementById('playerField').value;
+    console.log(playerName);
+    if (playerName != '') {startButton.disabled = false;}
     }
 
+
 //timer function
+let clock; 
+
 function activateTimer(time) {
-    secondsLeft.innerText = `${allowedTime}`;
-    let clock = setInterval(countDown, 1000);
+    time = allowedTime;
+
+    clock = setInterval(countDown, 1000);
 
     function countDown() {
         if (time > 0) {
+
             secondsLeft.innerText = `${time}`;
             console.log(`time left: ${time}`);
             time -= 1;
@@ -453,7 +507,34 @@ function activateTimer(time) {
             clearInterval(clock);
         }
     }
+
 }
+
+function deactivateTimer() {
+// clearInterval(clock);
+// how many ways to do this? 
+// 1. clear int
+// 2. time = 0
+// 3. 
+// time = 0; 
+//* chatgpt
+secondsLeft.innerText = '0';
+clearInterval(clock);
+
+console.log('wow has turned to 0');
+}
+
+// enable nextButton function, only when an option is clicked
+function enableNextButton() {
+
+    nextButtonQ12.disabled = false;
+    nextButtonQ23.disabled = false;
+    nextButtonQ34.disabled = false;
+    nextButtonQ45.disabled = false;
+    nextButtonQ5end.disabled = false;
+
+}
+
 
 //option reset function 
 function resetOptionButtons() {
