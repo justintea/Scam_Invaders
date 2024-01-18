@@ -179,15 +179,21 @@ span {
 }
 
 .game_box {
-    width: 700px;
+    width: 40%;
+    height: 65%;
+    margin: 0;
+    background-color: rgb(231, 227, 227);
+    border-radius: 6px;
+    padding: 1% 2% 0 2%;
+    /* width: 700px;
     height: 500px;
     background-color: rgb(231, 227, 227);
     border-radius: 6px;
-    padding: 10px 20px 0 20px;
+    padding: 10px 20px 0 20px; */
 
     position: absolute;
     top: 50%;
-    left: 35%;
+    left: 25%;
     margin-right: -35%;
     transform: translate(-35%, -50%);
 }
@@ -200,14 +206,19 @@ span {
 
 .game_box .timer {
     background-color: rgb(130, 125, 125);
-    width: 100px;
-    height: 40px;
+    width: 20%;
+    /* width: 100px; */
+    height: 3%;
+    /* height: 40px; */
     border-radius: 4px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px;
+    padding: 2%;
+    /* padding: 15px; */
+    position: relative;
+    left: 2%;
 }
 
 .game_box .timeleft {
@@ -281,8 +292,8 @@ cursor: not-allowed;
 
 #nextButtonQ12 {
     display: block;
-    height: 20%;
-    width: 30%;
+    height: 50%;
+    width: 35%;
     /* height: 50%;
     width: 30%; */
     border-radius: 6px;
@@ -293,9 +304,10 @@ cursor: not-allowed;
     align-items: center;
 
     position: relative;
-    top: 100%;
-    left: 74%;
+    top: 10%;
+    left: 71%;
 }
+
 
 #nextButtonQ23 {
     height: 60%;
@@ -388,16 +400,22 @@ cursor: not-allowed;
 /*--------------------- (4) -------------------*/
 .game_screen .smartphone {
     display: none;
-    width: 360px;
-    height: 640px;
+    width: 59.5%;
+     /* width: 360px; */
+     height: 153%;
+    /* height: 640px; */
     border: 10px black solid;
     border-radius: 50px;
+    /* width: 360px;
+    height: 640px;
+    border: 10px black solid;
+    border-radius: 50px; */
     background-color: white;
     display: block;
 
     position: absolute;
     top: 50%;
-    left: 210%;
+    left: 228%;
     margin-right: -210%;
     transform: translate(-210%, -50%);
 }
@@ -405,8 +423,11 @@ cursor: not-allowed;
 .banner {display: block;} 
 
 #chatbanner {
-    width: 340px;
-    height: 100px;
+    width: 100%;
+    height: 16%;
+    /* height: 100px;  */
+
+    /* width: 340px; */
     background-color: #E2EEE4;
     border-radius: 0px;
     border-top-left-radius: 40px;
@@ -420,8 +441,11 @@ cursor: not-allowed;
 
 #speaker {
     /* display: none; */
-    width: 100px;
-    height: 30px;
+    width: 31%;
+    /* width: 100px; */
+    height: 4.5%;
+    /* height: 30px; */
+
     background-color: black;
     border-radius: 10px;
 
@@ -432,7 +456,7 @@ cursor: not-allowed;
 
 #displayName {
     /* display: none; */
-    font-size: 22px;
+    font-size: 1.3em;
     background-color: none;
     text-align: center;
     font-weight: bold;
@@ -450,18 +474,24 @@ cursor: not-allowed;
 }
 
 #phoneBG {
-    width: 90%;
-
-    position: relative;
-    top: -139px;
+    
     width: 100%;
+    height: 80%;
+    position: relative;
+    top: -22.5%;
+    /* top: -139px; */
+ 
 }
 
 .messages {
-    max-width: 320px;
     background-color: #FFFFFF;
-    margin: 4px 10px 4px 10px;
-    padding: 10px;
+    max-width: 80%;
+    /* max-width: 320px; */
+
+    margin: 1% 2% 1% 2%;
+    /* margin: 4px 10px 4px 10px; */
+    padding: 2%;
+    /* padding: 10px; */
     border-radius: 10px;
     width: fit-content;
 }
@@ -612,14 +642,16 @@ cursor: not-allowed;
 
 #phonefunc {
     width: 100%;
-
+    height: 5%;
     position: absolute;
     top: 89%;
 }
 
 #phonefuncbase {
-    width: 340px;
-    height: 36px;
+    width: 100%;
+    /* width: 340px; */
+    height: 6%;
+    /* height: 36px; */
     background-color: #E3EDE4;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
